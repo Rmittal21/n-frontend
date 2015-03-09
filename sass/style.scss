@@ -5,6 +5,9 @@
 */
 
 @import "_bootstrap";
+@import "_fontawesome";
+@import "_faanimation";
+@import "_hover";
 
 
 /*
@@ -194,6 +197,7 @@ $link-hover-color:  darken($brand-primary,30%);
     -ms-border-radius: $radius;
     border-radius: $radius;
 }
+
 @mixin border($thickness,$style,$color,$side) {
     @if $side == left {
         border-left:$thickness $style $color;
@@ -203,8 +207,19 @@ $link-hover-color:  darken($brand-primary,30%);
         border-top:$thickness $style $color;
     } @else if $side == bottom {
         border-bottom:$thickness $style $color;
+    } @else if $side == full {
+    	border:$thickness $style $color;
     }
 }
+
+@mixin animation($duration) {
+  -webkit-transition: all $duration ease-in-out;
+  -moz-transition: all $duration ease-in-out;
+  -ms-transition: all $duration ease-in-out;
+  -o-transition: all $duration ease-in-out;
+  transition: all $duration ease-in-out;
+}
+
 
 
 /*
@@ -528,7 +543,8 @@ $link-hover-color:  darken($brand-primary,30%);
         ======  POSITIONING  ======
 */
 
-.full-width {   width:100%;     }
+.full-width 	{  	 	width:100%;     }
+.js-full-screen {		width:100%;		}
 
 
 /*
@@ -536,6 +552,15 @@ $link-hover-color:  darken($brand-primary,30%);
 */
 
 .bg-brand-primary {     background:$brand-primary;      }
+
+
+
+
+@media (max-width: $screen-xs-max) {
+
+	.xs-text-center {	text-align:center;	}	
+	
+}
 
 
 /*
