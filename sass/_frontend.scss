@@ -1,0 +1,39 @@
+body {
+    font-family:    "Open Sans";
+    font-size:      $font-size;
+    line-height:    $line-height;
+    color:          $text-color;
+
+    a {
+        color:$link-color;
+        text-decoration: none;
+        @include border(1px,dotted,$link-color,bottom);
+
+        &:hover, &:focus, &.active {
+            color:$link-hover-color;
+            text-decoration: none;
+            @include border(1px,dotted,$link-hover-color,bottom);
+        }
+
+    }
+
+    header {
+
+
+    }
+
+
+    main {
+
+
+    }
+
+
+    footer {
+
+
+    }
+
+
+
+}
