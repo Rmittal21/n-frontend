@@ -6,9 +6,11 @@ $(document).ready(function() {
 		classes: "mm-light"
 	});
 	
-	$(".fancybox").fancybox({
-		padding:0,
-		margin:0
+	$("a.fancybox").fancybox({
+		type: 'image',
+		padding: 0,
+		hideOnContentClick: true,
+		helpers: { title: false } 
 	});
 	
 	$("#mobile-menu-button").click(function(e) {
