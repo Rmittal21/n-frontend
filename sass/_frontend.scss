@@ -1,3 +1,5 @@
+* {		@include animation(0.5s);		}
+
 body {
     font-family:    "Open Sans";
     font-size:      $font-size;
@@ -9,7 +11,6 @@ a {
     color:$link-color;
     text-decoration: none;
     @include border(1px,dotted,$link-color,bottom);
-    @include animation(0.5s);
     
     &:hover, &:focus, &.active {
         color:$link-hover-color;
@@ -81,7 +82,6 @@ form {
 		@include padding(10px,bottom);
 		@include padding(30px,left);
 		@include padding(60px,right);
-		@include animation(0.5s);
 		
 		@extend a.cta-inverse;
 	}
@@ -94,8 +94,6 @@ h1 {
 	
 	a {
 		
-		img {	@include animation(0.5s);	}
-		
 		&:hover, &:focus {
 			
 			img {	opacity:0.3;	}
@@ -105,6 +103,13 @@ h1 {
 	}
 	
 }
+
+/*
+        =========================================================
+        ======  IT'S UP TO YOU (NEW YORK, NEW YORK)   ===========
+        =========================================================
+*/
+
 
 header {
 
