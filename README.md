@@ -2,6 +2,11 @@
 
 N frontend is a kickstart for all my latest webprojects.  This setup contains the latest CSS helpers, jQuery plugins and basic markup.
 
+###Preview
+
+http://ruttennicky.github.io/n-frontend/
+
+
 ###jQuery
 
 Libaries included:
@@ -11,6 +16,7 @@ Libaries included:
   - Slick carousel
   - MMenu
   - Google Analytics snippet
+
 
 ###CSS
 Libraries included:
@@ -24,8 +30,10 @@ Libraries included:
 
 
 ###Version
+
 v 1.0
 
 
 ###Questions?
+
 ruttennicky@me.com
