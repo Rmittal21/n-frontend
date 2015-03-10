@@ -26,8 +26,10 @@
 */
 
 $brand-primary:     rgba(60,179,113,1);
-$brand-secondary:   rgba(1,1,1,1);
+$brand-secondary:   rgba(232,85,0,1);
 $brand-tertiary:    rgba(255,255,255,1);
+
+$brand-primary-opacity: rgba(60,179,113,0.7);
 
 $lightest-grey:     rgba(233,233,233,1);
 $light-grey:        rgba(211,211,211,1);
@@ -45,6 +47,9 @@ $line-height:       2em;
 
 $link-color:        $brand-primary;
 $link-hover-color:  darken($brand-primary,40%);
+
+$link-color-secondary: $brand-secondary;
+$link-hover-color-secondary:  darken($brand-secondary,40%);
 
 
 /*
@@ -219,7 +224,6 @@ $link-hover-color:  darken($brand-primary,40%);
   -o-transition: all $duration ease-in-out;
   transition: all $duration ease-in-out;
 }
-
 
 
 /*
@@ -548,18 +552,29 @@ $link-hover-color:  darken($brand-primary,40%);
 
 
 /*
+        ====== BORDERS ======
+*/
+
+.border-grey-top    {      @include border(1px, solid, $light-grey, top);        }
+.border-grey-bottom {      @include border(1px, solid, $light-grey, bottom);        }
+
+
+/*
         ====== BACKGROUND ======
 */
 
 .bg-brand-primary {     background:$brand-primary;      }
 
 
+/*
+        ====== RESPONSIVE HELPERS ======
+*/
 
 
 @media (max-width: $screen-xs-max) {
 
-	.xs-text-center {	text-align:center;	}	
-	
+	.xs-text-center {	text-align:center;	}
+
 }
 
 
