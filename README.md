@@ -37,3 +37,8 @@ v 1.0
 ###Questions?
 
 ruttennicky@me.com
+
+###Issues & featues
+
+I use Trello for this: https://trello.com/b/L1Cl4OD7/n-frontend
+Feel free to submit requests!
