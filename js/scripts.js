@@ -18,6 +18,22 @@ $(document).ready(function() {
         $("#mobile-menu").trigger("open.mm");
     });
     
+    $(".gallery").slick({
+    	infinite: true,
+  		slidesToShow: 3,
+  		slidesToScroll: 3,
+  		arrows: false
+  	});
+  	
+  	$("#gallery-next").click(function(e){
+  		e.preventDefault();
+	    $('.gallery').slick('slickNext');
+	});
+	
+	$("#gallery-prev").click(function(e){
+		e.preventDefault();
+	    $('.gallery').slick('slickPrev');
+	});
     
 	$(window).resize(function() {
 		resize();

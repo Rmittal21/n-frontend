@@ -30,6 +30,7 @@ a {
     &:hover, &:focus, &.active {
         color:$link-hover-color;
         text-decoration: none;
+        outline:none;
 
         @include border(1px,dotted,$link-hover-color, bottom);
     }
@@ -140,25 +141,6 @@ a {
 
         }
 
-    }
-
-    &.btn-round {
-        min-width: 50px;
-        min-height: 50px;
-        text-align: center;
-        display: block;
-        font-size:1.5em;
-        line-height: 2em;
-
-        @include border-radius(100%);
-        @include border(3px, solid, $link-color, full);
-
-        &:hover, &:focus {
-            background: $link-hover-color;
-            color: $white;
-
-            @include border(3px, solid, $link-hover-color, full);
-        }
     }
 
     &.no-border, &.fancybox-close, &.gallery-item {		border:none;	}
