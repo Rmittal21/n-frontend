@@ -23,11 +23,11 @@ Gulp takes care of:
     
     ```npm install gulp```
 
-2.	Just run Gulp
+2. Just run Gulp
     
-    ```gulp```
+    ```gulp serve```
 
-3.	Gulp opens Firefox on localhost, port 8001.  Enjoy the reload
+3. Gulp opens Firefox on localhost, port 8001.  Enjoy the reload
 
 
 ###jQuery
