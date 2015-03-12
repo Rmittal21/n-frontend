@@ -1,6 +1,6 @@
 {
   "name": "nfrontend",
-  "version": "3.8.6",
+  "version": "2.0",
   "description": "N frontend framework",
   "main": "index.js",
   "scripts": {
