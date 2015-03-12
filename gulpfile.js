@@ -34,7 +34,7 @@ var displayError = function(error) {
     console.error(errorString);
 }
 
-gulp.task('default', ['webserver','openbrowser','watch']);
+gulp.task('serve', ['webserver','openbrowser','watch']);
 
 gulp.task('webserver', function() {
   gulp.src( '.' )
