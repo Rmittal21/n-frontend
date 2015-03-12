@@ -20,10 +20,12 @@ Gulp takes care of:
 ###Installation instruction
 	
 1. Install the prerequisite gulp libraries
+    
     ```npm install gulp```
 
 2.	Just run Gulp
-    ```gulp```	
+    
+    ```gulp```
 
 3.	Gulp opens Firefox on localhost, port 8001.  Enjoy the reload
 
