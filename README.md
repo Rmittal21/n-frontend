@@ -2,9 +2,17 @@
 
 N frontend is a kickstart for all my latest webprojects.  This setup contains the latest CSS helpers, jQuery plugins and basic markup.
 
+
 ###Preview
 
 http://ruttennicky.github.io/n-frontend/
+
+
+###GULP
+New! N frontend comes with gulp.
+
+Gulp takes care of:
+- SASS compiling (one time, no watch yet)
 
 
 ###jQuery
@@ -27,11 +35,6 @@ Libraries included:
   - Slick carousel CSS
   - MMenu CSS
   - Google Webfont (via CDN) : Open Sans (because this is a good standard font :) )
-
-
-###Version
-
-v 1.0
 
 
 ###Questions?
