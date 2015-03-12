@@ -8,7 +8,7 @@ N frontend is a kickstart for all my latest webprojects.  This setup contains th
 http://ruttennicky.github.io/n-frontend/
 
 
-###GULP
+###Gulp
 N frontend comes with gulp.
 
 Gulp takes care of:
@@ -20,10 +20,10 @@ Gulp takes care of:
 ###Installation instruction
 	
 1. Install the prerequisite gulp libraries
-    npm install gulp
+    ```npm install gulp```
 
 2.	Just run Gulp
-    gulp		
+    ```gulp```	
 
 3.	Gulp opens Firefox on localhost, port 8001.  Enjoy the reload
 
