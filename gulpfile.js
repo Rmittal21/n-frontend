@@ -1,6 +1,7 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-
+var gulp      = require('gulp');
+var sass      = require('gulp-sass');
+var webserver = require('gulp-webserver');
+var opn       = require('opn');
 
 var paths = {
 
@@ -12,42 +13,56 @@ var paths = {
 
 }
 
+var server = {
+
+  host: 'localhost',
+  port: '8001',
+  browser: 'firefox'
+
+}
+
 var displayError = function(error) {
 
-    // Initial building up of the error
     var errorString = '[' + error.plugin + ']';
-    errorString += ' ' + error.message.replace("\n",''); // Removes new line at the end
+    errorString += ' ' + error.message.replace("\n",'');
 
-    // If the error contains the filename or line number add it to the string
     if(error.fileName)
         errorString += ' in ' + error.fileName;
-
     if(error.lineNumber)
         errorString += ' on line ' + error.lineNumber;
 
-    // This will output an error like the following:
-    // [gulp-sass] error message in file_name on line 1
     console.error(errorString);
 }
 
-gulp.task('default', function() {
-  // place code for your default task here
+gulp.task('default', ['webserver','openbrowser','watch']);
+
+gulp.task('webserver', function() {
+  gulp.src( '.' )
+    .pipe(webserver({
+      host:             server.host,
+      port:             server.port,
+      livereload:       true,
+      directoryListing: false
+    }));
+});
+
+gulp.task('openbrowser', function() {
+  opn( 'http://' + server.host + ':' + server.port, server.browser );
 });
 
 gulp.task('sass', function () {
-    // Taking the path from the above object
     gulp.src(paths.styles.files)
-    // Sass options - make the output compressed and add the source map
-    // Also pull the include path from the paths object
     .pipe(sass({
         outputStyle: 'compressed',
         sourceComments: 'map',
         includePaths : [paths.styles.src]
     }))
-    // If there is an error, don't stop compiling but use the custom displayError function
     .on('error', function(err){
         displayError(err);
     })
-    // Funally put the compiled sass into a css file
     .pipe(gulp.dest(paths.styles.dest))
+});
+
+gulp.task('watch', function() {
+  gulp.watch('sass/style.scss', ['sass']);
 });
