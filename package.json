@@ -1,0 +1,18 @@
+{
+  "name": "nfrontend",
+  "version": "3.8.6",
+  "description": "N frontend framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "User",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-concat": "^2.3.3",
+    "gulp-jshint": "^1.7.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^0.7.2",
+    "gulp-uglify": "^0.3.1"
+  }
+}
