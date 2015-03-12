@@ -25,7 +25,7 @@ Gulp takes care of:
 
 2. Just run Gulp
     
-    ```gulp serve```
+    ```gulp```
 
 3. Gulp opens Firefox on localhost, port 8001.  Enjoy the reload
 
