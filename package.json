@@ -2,7 +2,12 @@
   "name": "nfrontend",
   "description": "N frontend framework",
   "author": "Nicky Rutten",
-  "license": "ISC",
+  "version": "3.8.11",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ruttennicky/n-frontend.git"
+  },
   "devDependencies": {
     "gulp-concat": "^2.5.2",
     "gulp-jshint": "^1.9.4",
