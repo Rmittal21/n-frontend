@@ -3,7 +3,7 @@
   "description": "N frontend framework",
   "author": "Nicky Rutten",
   "version": "3.8.11",
-  "license": "MIT",
+  "license": "GNU v3",
   "repository": {
     "type": "git",
     "url": "git://github.com/ruttennicky/n-frontend.git"
