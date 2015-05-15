@@ -21,7 +21,7 @@ Gulp takes care of:
 	
 1. Install the prerequisite gulp libraries
     
-    ```npm install gulp```
+    ```npm install```
 
 2. Just run Gulp
     
