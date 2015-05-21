@@ -1,41 +1,44 @@
 var gulp      = require('gulp');
 var sass      = require('gulp-sass');
 var webserver = require('gulp-webserver');
+var uglify    = require('gulp-uglify');
+var gutil     = require('gulp-util');
+var filesize  = require('gulp-filesize');
+var minifyHTML= require('gulp-minify-html');
+var imagemin  = require('gulp-imagemin');
 var opn       = require('opn');
+var pngquant  = require('imagemin-pngquant');
 
 var paths = {
-
-    styles: {
+    css: {
         src: './sass',
-        files: './sass/**/*.scss',
-        dest: './css'
+        files: './src/sass/**/*.scss',
+        dest: './dist/css/',
+        filename: 'style.scss'
+    },
+    js: {
+        src: './js',
+        files: './src/js/**/*.js',
+        dest: './dist/js/',
+        filename: 'scripts.js'
+    },
+    images: {
+        src:'./src/images/**/*',
+        dest: './dist/images/'
+    },
+    html: {
+        src:'./src/*.html',
+        dest: './dist/'
     }
-
 }
 
 var server = {
-
   host: 'localhost',
   port: '8001',
   browser: 'firefox'
-
 }
 
-var displayError = function(error) {
-
-    var errorString = '[' + error.plugin + ']';
-    errorString += ' ' + error.message.replace("\n",'');
-
-    if(error.fileName)
-        errorString += ' in ' + error.fileName;
-    if(error.lineNumber)
-        errorString += ' on line ' + error.lineNumber;
-
-    console.error(errorString);
-}
-
-gulp.task('serve', ['webserver','openbrowser','watch']);
-
+//Opens webserver
 gulp.task('webserver', function() {
   gulp.src( '.' )
     .pipe(webserver({
@@ -46,23 +49,61 @@ gulp.task('webserver', function() {
     }));
 });
 
+//Setup webserver
 gulp.task('openbrowser', function() {
-  opn( 'http://' + server.host + ':' + server.port, server.browser );
+  opn( 'http://' + server.host + ':' + server.port + '/dist/index.html', server.browser );
 });
 
-gulp.task('sass', function () {
-    gulp.src(paths.styles.files)
+//Make pretty css from SASS files
+gulp.task('css', function () {
+    gulp.src(paths.css.files)
     .pipe(sass({
         outputStyle: 'compressed',
         sourceComments: 'map',
-        includePaths : [paths.styles.src]
+        includePaths : [paths.css.src]
     }))
-    .on('error', function(err){
-        displayError(err);
-    })
-    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(gulp.dest(paths.css.dest))
+    .on('error', gutil.log)
 });
 
-gulp.task('watch', function() {
-  gulp.watch('sass/style.scss', ['sass']);
+//Throw JS together and minify
+gulp.task('js', function() {  
+    gulp.src(paths.js.files)
+    .pipe(uglify())
+    .pipe(filesize())
+    .pipe(gulp.dest(paths.js.dest))
+    .on('error', gutil.log)
 });
+
+//Optimize images
+gulp.task('images', function () {
+     gulp.src(paths.images.src)
+     .pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],
+         use: [pngquant()]
+     }))
+     .pipe(gulp.dest(paths.images.dest));
+});
+
+//Optimize HTML
+gulp.task('html', function() {
+  gulp.src(paths.html.src)
+    .pipe(minifyHTML())
+    .pipe(gulp.dest(paths.html.dest));
+});
+
+//Pagespeed goodness
+gulp.task('pagespeed', function() {
+    console.log('done');   
+});
+
+//Look for changes
+gulp.task('watch', function() {
+  gulp.watch(paths.css.files, ['css']);
+  gulp.watch(paths.js.files, ['js']);
+  gulp.watch(paths.html.files, ['html']);
+});
+
+//Serve up the fancy part
+gulp.task('serve', ['webserver','openbrowser','css','js','images','html','watch']);
