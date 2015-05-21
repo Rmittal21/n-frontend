@@ -102,4 +102,4 @@ gulp.task('watch', function() {
 });
 
 //Serve up the fancy part
-gulp.task('serve', ['css','js','images','html','openbrowser','webserver','watch']);
+gulp.task('serve', ['css','js','images','html','webserver','watch','openbrowser']);
