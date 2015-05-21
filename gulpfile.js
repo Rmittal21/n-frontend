@@ -1,12 +1,12 @@
 var gulp      = require('gulp');
 var sass      = require('gulp-sass');
 var webserver = require('gulp-webserver');
+var opn       = require('opn');
 var uglify    = require('gulp-uglify');
 var gutil     = require('gulp-util');
 var filesize  = require('gulp-filesize');
 var minifyHTML= require('gulp-minify-html');
 var imagemin  = require('gulp-imagemin');
-var opn       = require('opn');
 var pngquant  = require('imagemin-pngquant');
 
 var paths = {
@@ -33,8 +33,9 @@ var paths = {
 }
 
 var server = {
+  file: '/dist/index.html',
   host: 'localhost',
-  port: '8001',
+  port: '3333',
   browser: 'firefox'
 }
 
@@ -49,9 +50,9 @@ gulp.task('webserver', function() {
     }));
 });
 
-//Setup webserver
+//Open the browser
 gulp.task('openbrowser', function() {
-  opn( 'http://' + server.host + ':' + server.port + '/dist/index.html', server.browser );
+  opn( 'http://' + server.host + ':' + server.port + server.file );
 });
 
 //Make pretty css from SASS files
@@ -93,11 +94,6 @@ gulp.task('html', function() {
     .pipe(gulp.dest(paths.html.dest));
 });
 
-//Pagespeed goodness
-gulp.task('pagespeed', function() {
-    console.log('done');   
-});
-
 //Look for changes
 gulp.task('watch', function() {
   gulp.watch(paths.css.files, ['css']);
@@ -106,4 +102,4 @@ gulp.task('watch', function() {
 });
 
 //Serve up the fancy part
-gulp.task('serve', ['webserver','openbrowser','css','js','images','html','watch']);
+gulp.task('serve', ['css','js','images','html','openbrowser','webserver','watch']);
