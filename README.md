@@ -12,8 +12,12 @@ http://ruttennicky.github.io/n-frontend/
 N frontend comes with gulp.
 
 Gulp takes care of:
- - Local webserver (localhost on port 8001)
+ - Local webserver (localhost on port 3333)
  - LiveReload
+ - JS minify
+ - CSS minfy
+ - HTML minfy
+ - Image optim
  - SASS compiling
 
 
@@ -21,13 +25,13 @@ Gulp takes care of:
 	
 1. Install the prerequisite gulp libraries
     
-    ```npm install gulp```
+    ```npm install```
 
 2. Just run Gulp
     
     ```gulp serve```
 
-3. Gulp opens Firefox on localhost, port 8001.  Enjoy the reload
+3. Gulp opens Firefox on localhost, port 3333.  Enjoy the auto-reload
 
 
 ###jQuery
@@ -49,7 +53,7 @@ Libraries included:
   - Fancybox CSS
   - Slick carousel CSS
   - MMenu CSS
-  - Google Webfont (via CDN): Open Sans (because this is a good standard font :) )
+  - Google Webfont (via CDN): Open Sans ( because this is a good standard font :) )
 
 
 ###Questions?
