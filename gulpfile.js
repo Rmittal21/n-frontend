@@ -4,21 +4,17 @@ var webserver = require('gulp-webserver');
 var opn       = require('opn');
 
 var paths = {
-
     styles: {
         src: './sass',
         files: './sass/**/*.scss',
         dest: './css'
     }
-
 }
 
 var server = {
-
   host: 'localhost',
   port: '8001',
   browser: 'firefox'
-
 }
 
 var displayError = function(error) {
