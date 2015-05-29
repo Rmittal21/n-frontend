@@ -10,11 +10,7 @@ var imagemin  = require('gulp-imagemin');
 var pngquant  = require('imagemin-pngquant');
 
 var paths = {
-<<<<<<< HEAD
-    styles: {
-=======
     css: {
->>>>>>> beaf7ccd930d5d7e794b4ab8f28995b76ee42885
         src: './sass',
         files: './src/sass/**/*.scss',
         dest: './dist/css/',
@@ -27,24 +23,20 @@ var paths = {
         filename: 'scripts.js'
     },
     images: {
-        src:'./src/images/**/*',
+        src: './src/images/**/*',
         dest: './dist/images/'
     },
     html: {
-        src:'./src/*.html',
+        src: './src/**/*.html',
         dest: './dist/'
     }
 }
 
 var server = {
-<<<<<<< HEAD
-=======
-  file: '/dist/index.html',
->>>>>>> beaf7ccd930d5d7e794b4ab8f28995b76ee42885
-  host: 'localhost',
-  port: '3333',
-  browser: 'firefox'
-<<<<<<< HEAD
+    file: '/dist/index.html',
+    host: 'localhost',
+    port: '3333',
+    browser: 'firefox'
 }
 
 var displayError = function(error) {
@@ -58,8 +50,6 @@ var displayError = function(error) {
         errorString += ' on line ' + error.lineNumber;
 
     console.error(errorString);
-=======
->>>>>>> beaf7ccd930d5d7e794b4ab8f28995b76ee42885
 }
 
 //Opens webserver
@@ -125,4 +115,4 @@ gulp.task('watch', function() {
 });
 
 //Serve up the fancy part
-gulp.task('serve', ['css','js','images','html','webserver','watch','openbrowser']);
+gulp.task('serve', ['css','js','images','html','webserver','openbrowser','watch']);
