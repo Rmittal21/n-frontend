@@ -16,7 +16,8 @@
         ==========================
 */
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Ubuntu:400,700);
+@import url(http://fonts.googleapis.com/css?family=Fauna+One);
 
 
 /*
@@ -25,11 +26,11 @@
         ==========================
 */
 
-$brand-primary:     rgba(60,179,113,1);
-$brand-secondary:   rgba(232,85,0,1);
+$brand-primary:     rgba(31,69,106,1);
+$brand-secondary:   rgba(0,124,194,1);
 $brand-tertiary:    rgba(255,255,255,1);
 
-$brand-primary-opacity: rgba(60,179,113,0.7);
+$brand-primary-opacity: rgba(31,69,106,0.7);
 
 $lightest-grey:     rgba(233,233,233,1);
 $light-grey:        rgba(211,211,211,1);
@@ -40,16 +41,21 @@ $dark-grey:         rgba(45,45,45,1);
 $black:             rgba(0,0,0,1);
 $white:             rgba(255,255,255,1);
 
-$text-color:        $darker-grey;
+$text-color:        rgba(1,22,75,1);
 
-$font-size:         16px;
-$line-height:       2em;
+$font-family:               "Ubuntu",sans-serif;
+$font-family-secondary:     "Fauna One", serif;
+$font-size:                 16px;
+$line-height:               2em;
 
 $link-color:        $brand-primary;
 $link-hover-color:  darken($brand-primary,20%);
 
 $link-color-secondary: $brand-secondary;
 $link-hover-color-secondary:  darken($brand-secondary,20%);
+
+$link-color-tertiary:   $brand-tertiary;
+$link-hover-color-tertiary:   darken($brand-tertiary,20%);
 
 
 /*
@@ -214,6 +220,24 @@ $link-hover-color-secondary:  darken($brand-secondary,20%);
         border-bottom:$thickness $style $color;
     } @else if $side == full {
     	border:$thickness $style $color;
+    }
+}
+
+@mixin height($value) {
+    @media (max-width: $screen-xs-min) {
+        height:$value/2;
+    }
+    @media (min-width: $screen-xs-min) {
+        height:$value/2;
+    }
+    @media (min-width: $screen-sm-min) {
+        height:$value/2;
+    }
+    @media (min-width: $screen-md-min) {
+        height:$value/2;
+    }
+    @media (min-width: $screen-lg-min) {
+        height:$value;
     }
 }
 
@@ -542,6 +566,8 @@ $link-hover-color-secondary:  darken($brand-secondary,20%);
 .f-black    {  color: $black;   }
 .f-grey     {  color: $grey;    }
 
+.f-fauna    {  font-family: 'Fauna One', serif;  }
+
 
 /*
         ======  POSITIONING  ======
@@ -554,18 +580,50 @@ $link-hover-color-secondary:  darken($brand-secondary,20%);
 
 
 /*
+        ======  POSITIONING  ======
+*/
+.h-50           {       @include height(50px);       } 
+.h-300          {       @include height(300px);      } 
+
+
+/*
         ====== BORDERS ======
+.border-grey-top    {      @include border(1px, solid, $light-grey, top);        }
 */
 
-.border-grey-top    {      @include border(1px, solid, $light-grey, top);        }
+.border-grey-top    {      @include border(1px, solid, $light-grey, top);           }
 .border-grey-bottom {      @include border(1px, solid, $light-grey, bottom);        }
 
+.border-secondary-top {         @include border(1px, solid, $brand-secondary, top);        }
+.border-secondary-bottom {      @include border(1px, solid, $brand-secondary, bottom);     }
 
 /*
         ====== BACKGROUND ======
 */
 
 .bg-brand-primary {     background:$brand-primary;      }
+
+
+
+/*
+        ====== TABLES ======
+*/
+
+table {
+    
+    tr {
+        
+    }
+    
+    th, td {
+        
+        @include padding(20px,all);
+        @include border(1px, solid, $light-grey, bottom);
+        
+    }   
+    
+}
+
 
 
 /*

@@ -38,6 +38,20 @@ $(document).ready(function() {
 	$(window).resize(function() {
 		resize();
 	});
+    
+    var isotopeContainer = $('.grid').isotope({
+        itemSelector: '.item'
+    });
+    
+    // filter items on button click
+    $('#filter-list').on( 'click', 'a', function() {
+      $('#filter-list > li > a').each(function() {
+        $(this).removeClass("active"); 
+      });
+      $(this).addClass("active");
+      var filterValue = $(this).attr('data-filter');
+      isotopeContainer.isotope({ filter: filterValue });
+    });
 	
 });
 

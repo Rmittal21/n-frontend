@@ -1,7 +1,5 @@
 * {
     outline: none;
-
-    @include animation(0.5s);
 }
 
 ::-moz-selection {
@@ -15,7 +13,7 @@
 }
 
 body {
-    font-family:    "Open Sans",sans-serif;
+    font-family:    $font-family;
     font-size:      $font-size;
     line-height:    $line-height;
     color:          $text-color;
@@ -25,6 +23,7 @@ a {
     color:$link-color;
     text-decoration: none;
 
+    @include animation(0.5s);
     @include border(1px,dotted,$link-color,bottom);
 
     &:hover, &:focus, &.active {
@@ -37,7 +36,8 @@ a {
 
     &.cta {
 
-    	display:block;
+    	/*display:block;*/
+        float:left;
     	text-align:center;
     	text-transform:uppercase;
     	font-weight:bold;
@@ -48,7 +48,9 @@ a {
     	@include border(3px, solid, $link-color, full);
     	@include padding(20px, top);
     	@include padding(20px, bottom);
-
+        @include padding(40px, left);
+    	@include padding(40px, right);
+        
     	&:hover, &:focus {
     		background: $link-color;
     		color: $white;
@@ -59,7 +61,9 @@ a {
     }
 
     &.cta-inverse {
-    	display:block;
+    	/*display:block;*/
+        float:left;
+    	text-align:center;
     	text-align:center;
     	text-transform:uppercase;
     	font-weight:bold;
@@ -110,10 +114,39 @@ a {
         }
 
     }
+    
+    &.cta-tertiary {
+        @extend a.cta;
+        
+        color:$brand-tertiary;
+        @include border(3px, solid, $brand-tertiary, full);
+
+        &:hover, &:focus {
+            background: $brand-tertiary;
+            color:$link-color;
+
+            @include border(3px, solid, $brand-tertiary, full);
+        }
+        
+    }
+    
+    &.cta-teriary-inverse {
+        
+    }
+    
+    &.cta-small {
+        @extend a.cta;
+        
+        @include padding(10px, top);
+    	@include padding(10px, bottom);
+        @include padding(20px, left);
+    	@include padding(20px, right);
+        
+    }
 
     &.gallery-item {
         display: block;
-        max-width:400px;
+        max-width:100%;
         position:relative;
 
         .caption {
@@ -130,7 +163,7 @@ a {
                 margin-top: -12px;
                 position: absolute;
                 text-align: center;
-                top: 40%;
+                top: 50%;
                 width: 100%;
             }
         }
@@ -142,6 +175,8 @@ a {
         }
 
     }
+    
+    &.active {  font-weight: bold;  }
 
     &.no-border, &.fancybox-close, &.gallery-item {		border:none;	}
 
@@ -149,14 +184,16 @@ a {
 
 form {
 
-	[type=text],[type=number],[type=password],[type=email],[type=tel], textarea {
+	[type=text],[type=number],[type=password],[type=email],[type=tel], textarea, select {
 		width:100%;
         border:none;
+        background: none;
 
 		@include border(2px, solid, $text-color, bottom);
 	}
 
 	[type=submit],button {
+        @include animation(0.5s);
 		display:block;
 
 		@include padding(10px,top);
@@ -164,16 +201,56 @@ form {
 		@include padding(30px,left);
 		@include padding(60px,right);
         @extend a.cta-inverse;
+        
+        &.small {
+            
+          @include padding(5px,top);
+		  @include padding(5px,bottom);
+		  @include padding(10px,left);
+		  @include padding(20px,right);
+        }
+        
 	}
 
 	label {		display:block;		}
+    
+    &.inverse {
+        
+        [type=text],[type=number],[type=password],[type=email],[type=tel], textarea {
+            width:100%;
+            border:none;
+            background: none;
+
+		    @include border(2px, solid, $brand-tertiary, bottom);
+        }
+        
+        [type=submit],button {
+            display:block;
+
+            @include padding(10px,top);
+            @include padding(10px,bottom);
+            @include padding(30px,left);
+            @include padding(60px,right);
+            @extend a.cta-tertiary; 
+            
+            &.small {
+                @include padding(5px,top);
+		        @include padding(5px,bottom);
+		        @include padding(10px,left);
+                @include padding(20px,right);
+            }
+	    }
+        
+    }
 
 }
 
 h1 {
+    @include animation(0.5s);
 
 	a {
-
+       @include animation(0.5s);
+        
 		&:hover, &:focus {
 
 			img {	opacity:0.3;	}
@@ -183,6 +260,8 @@ h1 {
 	}
 
 }
+
+h1,h2,h3,h4,h5,h6 {     font-family: $font-family-secondary;        }
 
 
 /*
@@ -197,7 +276,9 @@ header {
 
 
 main {
-
+    
+    #background-header      {            background:url(../images/header_back_1.jpg) center center no-repeat;    }
+    #background-newsletter  {            background:url(../images/header_back_2.jpg) center center no-repeat;    }
 
 }
 
