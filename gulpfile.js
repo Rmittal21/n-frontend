@@ -98,7 +98,7 @@ gulp.task('html', function() {
 gulp.task('watch', function() {
   gulp.watch(paths.css.files, ['css']);
   gulp.watch(paths.js.files, ['js']);
-  gulp.watch(paths.html.files, ['html']);
+  gulp.watch(paths.html.src, ['html']);
 });
 
 //Serve up the fancy part
