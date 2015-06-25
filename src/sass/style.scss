@@ -16,8 +16,7 @@
         ==========================
 */
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Ubuntu:400,700|Roboto+Slab:400,700);
 
 /*
         ==========================
@@ -42,6 +41,8 @@ $white:             rgba(255,255,255,1);
 
 $text-color:        $darker-grey;
 
+$font-family:        "Ubuntu",sans-serif;
+$font-family-secondary:     "Roboto Slab", serif;
 $font-size:         16px;
 $line-height:       2em;
 
@@ -50,6 +51,10 @@ $link-hover-color:  darken($brand-primary,20%);
 
 $link-color-secondary: $brand-secondary;
 $link-hover-color-secondary:  darken($brand-secondary,20%);
+
+
+$link-color-tertiary: $brand-tertiary;
+$link-hover-color-tertiary:  darken($brand-tertiary,20%);
 
 
 /*
@@ -541,32 +546,44 @@ $link-hover-color-secondary:  darken($brand-secondary,20%);
 .f-white    {  color: $white;   }
 .f-black    {  color: $black;   }
 .f-grey     {  color: $grey;    }
+.f-primary 	{  color: $brand-primary;	}
+.f-secondary 	{	color:	$brand-secondary;	}
+.f-tertiary		{ 	color:	$brand-tertiary;	}
+
+.l-h-125	{	line-height:1.25em;		}
+.l-h-15		{	line-height:1.5em;		}
+.l-h-2		{	line-height:2em;		}
 
 
 /*
         ======  POSITIONING  ======
 */
 
-.full-width 	{  	 	width:100%;     }
-.js-full-screen {		width:100%;		}
+.full-width,.js-full-screen 	{  	 	width:100%;     }
 
 .p-relative 	{		position: relative;			}
+.p-absolute		{ 		position: absolute;			}
 
 
 /*
         ====== BORDERS ======
 */
 
-.border-grey-top    {      @include border(1px, solid, $light-grey, top);        }
+.border-grey-top    {      @include border(1px, solid, $light-grey, top);        	}
 .border-grey-bottom {      @include border(1px, solid, $light-grey, bottom);        }
+.border-primary-top {         @include border(1px, solid, $brand-primary, top);        }
+.border-primary-bottom {      @include border(1px, solid, $brand-primary, bottom);     }
+.border-secondary-top {         @include border(1px, solid, $brand-secondary, top);        }
+.border-secondary-bottom {      @include border(1px, solid, $brand-secondary, bottom);     }
 
 
 /*
         ====== BACKGROUND ======
 */
 
-.bg-brand-primary {     background:$brand-primary;      }
-
+.bg-primary 	{     background:$brand-primary;  	    }
+.bg-secondary	{	  background:$brand-secondary;		}
+.bg-tertiary 	{	  background:$brand-tertiary; 		}
 
 /*
         ====== RESPONSIVE HELPERS ======
@@ -579,6 +596,235 @@ $link-hover-color-secondary:  darken($brand-secondary,20%);
 
 }
 
+
+/*
+        ====== HTML SELECTORS =====
+*/
+
+
+* {		outline: none;		}
+
+::-moz-selection {
+    color: $white;
+    background: $brand-primary;
+}
+
+::selection {
+    color: $white;
+    background: $brand-primary;
+}
+
+body {
+    font-family:    $font-family;
+    font-size:      $font-size;
+    line-height:    $line-height;
+    color:          $text-color;
+}
+
+a {
+    color:$link-color;
+    text-decoration: none;
+	
+	@include animation(0.5s);
+    @include border(1px,dotted,$link-color,bottom);
+
+    &:hover, &:focus, &.active {
+        color:$link-hover-color;
+        text-decoration: none;
+        outline:none;
+
+        @include border(1px,dotted,$link-hover-color, bottom);
+    }
+
+    &.cta {
+
+    	display:block;
+    	text-align:center;
+    	text-transform:uppercase;
+    	font-weight:bold;
+    	color:$link-color;
+    	background:none;
+
+    	@include border-radius(3px);
+    	@include border(3px, solid, $link-color, full);
+    	@include padding(20px, top);
+    	@include padding(20px, bottom);
+
+    	&:hover, &:focus {
+    		background: $link-color;
+    		color: $white;
+
+            @include border(3px, solid, $link-hover-color, bottom);
+    	}
+
+    }
+
+    &.cta-inverse {
+    	display:block;
+    	text-align:center;
+    	text-transform:uppercase;
+    	font-weight:bold;
+    	color:$white;
+    	background:$link-color;
+
+    	@include border-radius(3px);
+    	@include border(3px, solid, $link-color, full);
+    	@include border(3px, solid, $link-hover-color, bottom);
+    	@include padding(20px, top);
+    	@include padding(20px, bottom);
+
+    	&:hover, &:focus {
+    		background: none;
+    		color: $link-color;
+
+    		@include border(3px, solid, $link-color, full);
+    	}
+
+    }
+
+    &.cta-secondary {
+        @extend a.cta;
+
+        color:$link-color-secondary;
+        @include border(3px, solid, $link-color-secondary, full);
+
+        &:hover, &:focus {
+            background: $link-color-secondary;
+            color: $white;
+
+            @include border(3px, solid, $link-hover-color-secondary, bottom);
+        }
+
+    }
+
+    &.cta-secondary-inverse {
+        @extend a.cta-inverse;
+
+        background:$link-color-secondary;
+        @include border(3px, solid, $link-color-secondary, full);
+        @include border(3px, solid, $link-hover-color-secondary, bottom);
+
+        &:hover, &:focus {
+            color:$link-color-secondary;
+
+            @include border(3px, solid, $link-color-secondary, full);
+        }
+
+    }
+    
+    &.cta-tertiary {
+        @extend a.cta;
+        
+        color:$brand-tertiary;
+        @include border(3px, solid, $brand-tertiary, full);
+
+        &:hover, &:focus {
+            background: $brand-tertiary;
+            color:$link-color;
+
+            @include border(3px, solid, $brand-tertiary, full);
+        }
+        
+    }
+    
+    &.cta-teriary-inverse {
+        @extend a.cta-inverse;
+        
+        background:$link-color-tertiary;
+        @include border(3px, solid, $link-color-tertiary, full);
+        @include border(3px, solid, $link-hover-color-tertiary, bottom);
+
+        &:hover, &:focus {
+            color:$link-color-tertiary;
+
+            @include border(3px, solid, $link-color-tertiary, full);
+        }
+        
+    }
+
+    &.gallery-item {
+        display: block;
+        max-width:400px;
+        position:relative;
+        
+        .caption {
+        	@include animation(0.5s);
+            background: $brand-primary-opacity;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            position: absolute;
+
+            .caption-content {
+                color: $white;
+                font-size: 20px;
+                height: 20px;
+                margin-top: -12px;
+                position: absolute;
+                text-align: center;
+                top: 40%;
+                width: 100%;
+            }
+        }
+
+        &:hover, &:focus {
+
+            .caption {      opacity:1;      }
+
+        }
+
+    }
+
+    &.no-border, &.fancybox-close, &.gallery-item {		border:none;	}
+
+}
+
+form {
+
+	[type=text],[type=number],[type=password],[type=email],[type=tel], textarea, select {
+		width:100%;
+        border:none;
+
+		@include border(2px, solid, $text-color, bottom);
+	}
+	
+	select {
+		@include padding(10px,top);
+		@include padding(10px,bottom);
+	}
+
+	[type=submit],button {
+		display:block;
+		
+ 		@include animation(0.5s);
+		@include padding(10px,top);
+		@include padding(10px,bottom);
+		@include padding(30px,left);
+		@include padding(60px,right);
+        @extend a.cta-inverse;
+	}
+
+	label {		display:block;		}
+
+}
+
+h1 {
+	@include animation(0.5s);
+
+	a {
+		@include animation(0.5s);
+		
+		&:hover, &:focus {
+
+			img {	opacity:0.3;	}
+
+		}
+
+	}
+
+}
+
+h1, h2, h3, h4, h5, h6 {		font-family:$font-family-secondary;		}
 
 /*
         ========================
