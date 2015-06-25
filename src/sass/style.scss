@@ -33,7 +33,6 @@ $brand-tertiary:    rgba(0,0,0,1);
 
 $brand-primary-opacity: rgba(31,69,106,$opacity);
 
-
 $lightest-grey:     rgba(233,233,233,1);
 $light-grey:        rgba(211,211,211,1);
 $grey:              rgba(186,186,186,1);
@@ -42,6 +41,8 @@ $dark-grey:         rgba(45,45,45,1);
 
 $black:             rgba(0,0,0,1);
 $white:             rgba(255,255,255,1);
+
+$white-opacity:		rgba(255,255,255,$opacity);
 
 $text-color:        rgba(1,22,75,1);
 
@@ -266,6 +267,12 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 	:-ms-input-placeholder { /* Internet Explorer 10+ */
 	   color:    $color;
 	}
+}
+
+@mixin shadow($hor,$ver,$blur,$color) {
+	-webkit-box-shadow: $hor $ver $blur $color;
+	-moz-box-shadow:    $hor $ver $blur $color;
+	box-shadow:         $hor $ver $blur $color;
 }
 
 
@@ -601,6 +608,7 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 
 .p-relative 	{		position: relative;			}
 .p-absolute		{ 		position: absolute;			}
+.p-fixed		{		position: fixed;			}
 
 
 /*
@@ -630,9 +638,18 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
         ====== BACKGROUND ======
 */
 
+.bg-white		{	   background:$white;				}
+.bg-white-opacity	{		background:$white-opacity;			}
 .bg-primary 	{     background:$brand-primary;  	    }
 .bg-secondary	{	  background:$brand-secondary;		}
 .bg-tertiary 	{	  background:$brand-tertiary; 		}
+
+
+/*
+        ====== BACKGROUND ======
+*/
+
+.sh-light-grey	{		@include shadow(3px,3px,3px,$lightest-grey);		}
 
 
 /*
