@@ -16,7 +16,8 @@
         ==========================
 */
 
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Ubuntu:400,700|Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Ubuntu:400,700|Fauna+One);
+
 
 /*
         ==========================
@@ -24,11 +25,14 @@
         ==========================
 */
 
+$opacity: 0.7;
+
 $brand-primary:     rgba(31,69,106,1);
 $brand-secondary:   rgba(0,124,194,1);
 $brand-tertiary:    rgba(0,0,0,1);
 
-$brand-primary-opacity: rgba(31,69,106,0.7);
+$brand-primary-opacity: rgba(31,69,106,$opacity);
+
 
 $lightest-grey:     rgba(233,233,233,1);
 $light-grey:        rgba(211,211,211,1);
@@ -42,7 +46,7 @@ $white:             rgba(255,255,255,1);
 $text-color:        rgba(1,22,75,1);
 
 $font-family:        "Ubuntu",sans-serif;
-$font-family-secondary:     "Roboto Slab", serif;
+$font-family-secondary:     "Fauna One", serif;
 $font-size:         16px;
 $line-height:       2em;
 
@@ -245,6 +249,23 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
   -ms-transition: all $duration ease-in-out;
   -o-transition: all $duration ease-in-out;
   transition: all $duration ease-in-out;
+}
+
+@mixin placeholder($color) {
+	::-webkit-input-placeholder { /* WebKit browsers */
+	    color:    $color;
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   color:    $color;
+	   opacity:  $opacity;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   color:    $color;
+	   opacity:  $opacity;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10+ */
+	   color:    $color;
+	}
 }
 
 
@@ -571,8 +592,6 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 .l-h-15		{	line-height:1.5em;		}
 .l-h-2		{	line-height:2em;		}
 
-.f-fauna    {  font-family: 'Fauna One', serif;  }
-
 
 /*
         ======  POSITIONING  ======
@@ -589,6 +608,8 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 */
 .h-50           {       @include height(50px);       } 
 .h-300          {       @include height(300px);      } 
+.h-400			{       @include height(400px);      }
+.h-500			{       @include height(500px);      }
 
 
 /*
@@ -619,16 +640,25 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 */
 
 table {
+	width: 75%;
+	
+	@include margin(20px,top);
+	@include margin(20px,bottom);
     
     tr {
-        
+    
+    	@include border(1px, solid, $light-grey, bottom);
+    	
+    	&:first-child {		@include border(1px, solid, $light-grey, top);		}
     }
     
     th, td {
         
-        @include padding(20px,all);
-        @include border(1px, solid, $light-grey, bottom);
-        
+        @include padding(10px,top);
+        @include padding(10px,bottom);
+        @include padding(5px,left);
+        @include padding(5px,right);
+           
     }   
     
 }
@@ -824,6 +854,12 @@ a {
         }
 
     }
+    
+    &.transparant-hover {
+    	
+    	&:hover,:focus {	opacity:$opacity;		}
+    	
+    }
 
     &.no-border, &.fancybox-close, &.gallery-item {		border:none;	}
 
@@ -834,6 +870,7 @@ form {
 	[type=text],[type=number],[type=password],[type=email],[type=tel], textarea, select {
 		width:100%;
         border:none;
+        background:none;
 
 		@include border(2px, solid, $text-color, bottom);
 	}
@@ -855,26 +892,13 @@ form {
 	}
 
 	label {		display:block;		}
-
-}
-
-h1 {
-	@include animation(0.5s);
-
-	a {
-		@include animation(0.5s);
-		
-		&:hover, &:focus {
-
-			img {	opacity:0.3;	}
-
-		}
-
-	}
+	
+	@include placeholder( $grey );
 
 }
 
 h1, h2, h3, h4, h5, h6 {		font-family:$font-family-secondary;		}
+
 
 /*
         ========================
