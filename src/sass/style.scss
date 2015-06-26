@@ -18,14 +18,15 @@
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Ubuntu:400,700|Roboto+Slab:400,700);
 
+
 /*
         ==========================
         ======  VARIABLES  =======
         ==========================
 */
 
-$brand-primary:     rgba(31,69,106,1);
-$brand-secondary:   rgba(0,124,194,1);
+$brand-primary:     rgba(0,48,91,1);
+$brand-secondary:   rgba(210,78,14,1);
 $brand-tertiary:    rgba(0,0,0,1);
 
 $brand-primary-opacity: rgba(31,69,106,0.7);
@@ -41,7 +42,7 @@ $white:             rgba(255,255,255,1);
 
 $text-color:        rgba(1,22,75,1);
 
-$font-family:        "Ubuntu",sans-serif;
+$font-family:        		"Ubuntu",sans-serif;
 $font-family-secondary:     "Roboto Slab", serif;
 $font-size:         16px;
 $line-height:       2em;
@@ -587,8 +588,9 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 /*
         ======  POSITIONING  ======
 */
-.h-50           {       @include height(50px);       } 
-.h-300          {       @include height(300px);      } 
+.h-50           {       @include height(50px);       	} 
+.h-300          {       @include height(300px);      	} 
+.h-450			{		@include height(300px); 		}
 
 
 /*
@@ -634,11 +636,9 @@ table {
 }
 
 
-
 /*
         ====== RESPONSIVE HELPERS ======
 */
-
 
 @media (max-width: $screen-xs-max) {
 
@@ -650,7 +650,6 @@ table {
 /*
         ====== HTML SELECTORS =====
 */
-
 
 * {		outline: none;		}
 
@@ -755,9 +754,9 @@ a {
         @include border(3px, solid, $link-hover-color-secondary, bottom);
 
         &:hover, &:focus {
-            color:$link-color-secondary;
+            color:$link-hover-color-secondary;
 
-            @include border(3px, solid, $link-color-secondary, full);
+            @include border(3px, solid, $link-hover-color-secondary, full);
         }
 
     }
@@ -832,16 +831,21 @@ a {
 form {
 
 	[type=text],[type=number],[type=password],[type=email],[type=tel], textarea, select {
+		background:none;
 		width:100%;
         border:none;
+        color:$white;
 
-		@include border(2px, solid, $text-color, bottom);
+		@include border(2px, solid, $white, bottom);
 	}
 	
 	select {
+		
 		@include padding(10px,top);
 		@include padding(10px,bottom);
 	}
+	
+	option {		background: $brand-primary;			}
 
 	[type=submit],button {
 		display:block;
@@ -851,8 +855,28 @@ form {
 		@include padding(10px,bottom);
 		@include padding(30px,left);
 		@include padding(60px,right);
-        @extend a.cta-inverse;
+
+
 	}
+	button {		@extend a.cta-inverse;			}
+	
+	[type=submit] {
+		@extend a.cta-inverse;
+		@include padding(30px,right);	
+				
+		&.inverse {		
+			@extend a.cta-secondary-inverse;		
+			
+			&:hover,&:focus {
+				@include border(3px, solid, $link-color-secondary, left);
+				@include border(3px, solid, $link-color-secondary, top);
+				@include border(3px, solid, $link-color-secondary, right);
+			}
+		}
+        	
+        
+	}
+	
 
 	label {		display:block;		}
 
@@ -875,6 +899,7 @@ h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {		font-family:$font-family-secondary;		}
+
 
 /*
         ========================
