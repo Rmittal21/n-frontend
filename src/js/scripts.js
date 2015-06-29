@@ -105,6 +105,7 @@ $(document).ready(function() {
 				
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
+	
 	/*
 	$(window).on('scroll',function() {
 		if ( $(window).scrollTop() >= $('header').outerHeight() ) 	{
@@ -119,6 +120,11 @@ $(document).ready(function() {
 		}
 	});
 	*/
+	
+	if ( $( ".video" ).length ) {
+		$(".video").get(0).play();
+	}
+	
 });
 
 

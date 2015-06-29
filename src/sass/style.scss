@@ -277,6 +277,23 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 	box-shadow:         $hor $ver $blur $color;
 }
 
+@mixin position($value,$side) {
+    @if $side == left {
+       left:$value;
+    } @else if $side == right {
+       right:$value;
+    } @else if $side == top {
+       top:$value;
+    } @else if $side == bottom {
+       bottom:$value;
+    } @else if $side == full {
+    	left:$value;
+    	right:$value;
+    	top:$value;
+    	bottom:$value;
+    }
+}
+
 
 /*
         ==========================
@@ -602,6 +619,12 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 .l-h-2		{	line-height:2em;		}
 
 
+
+
+.transparant	{			opacity:$opacity;			}
+
+
+
 /*
         ======  POSITIONING  ======
 */
@@ -611,6 +634,12 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 .p-relative 	{		position: relative;			}
 .p-absolute		{ 		position: absolute;			}
 .p-fixed		{		position: fixed;			}
+
+
+.a-left-0		{		@include position(0,left);		}
+
+.a-top-0		{		@include position(0,top);		}
+.a-top-50-p		{		@include position(-50%,top);	}
 
 
 /*
@@ -890,11 +919,15 @@ form {
         border:none;
         color:$text-color;
         
+		@include padding(5px,left);
+		@include padding(5px,right);
+		@include padding(5px,top);
+		@include padding(5px,bottom);
 		@include border(2px, solid, $text-color, bottom);
 	}
 	
 	select, option {
-		
+		@include padding(10px,left);
 		@include padding(10px,top);
 		@include padding(10px,bottom);
 	}
@@ -904,14 +937,14 @@ form {
 	[type=submit],button {
 		@extend a.cta-inverse;	
 		
-		display:block;
-		
  		@include animation(0.5s);
-		@include padding(10px,top);
-		@include padding(10px,bottom);
 		@include padding(30px,left);
 		@include padding(60px,right);
-
+		
+		&.small {
+			@include padding(10px,top);
+			@include padding(10px, bottom);
+		}
 
 	}
 	
@@ -930,16 +963,28 @@ form {
 			@include placeholder( $lightest-grey );
 		}
 		
-		[type=submit], button {
-				@extend a.cta-secondary-inverse;	
+		[type=submit], button {			
+			@extend a.cta-secondary-inverse;		
+			
+			/*@include padding(20px,top);
+			@include padding(20px, bottom);*/
+			
+			&.small {
+				@include padding(10px,top);
+				@include padding(10px, bottom);
+			}	
 		}
-		
 		
 	}
 
 }
 
-h1, h2, h3, h4, h5, h6 {		font-family:$font-family-secondary;		}
+h1, h2, h3, h4, h5, h6 {		
+	font-family:$font-family-secondary;
+	line-height:1.2;	
+	
+	@include margin(0,all); 
+}
 
 
 /*
