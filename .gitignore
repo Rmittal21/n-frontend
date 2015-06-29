@@ -1,9 +1,9 @@
 .DS_Store
 .sass-cache
-src/*.html
 src/sass/.sass-cache
 src/sass/_frontend.scss
 src/sass/_variables.scss
+src/*.html
 !src/index.html
 node_modules
 npm-debug.log
