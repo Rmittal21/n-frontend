@@ -893,7 +893,7 @@ form {
 		@include border(2px, solid, $text-color, bottom);
 	}
 	
-	select {
+	select, option {
 		
 		@include padding(10px,top);
 		@include padding(10px,bottom);
