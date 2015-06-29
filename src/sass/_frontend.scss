@@ -10,7 +10,19 @@ header {
 
 
 main {
-    
+        #background-search		{		     
+    	background:url(../images/header_back_3.jpg) center center no-repeat;	 
+    	background-size:cover;
+    } 
+    #background-header      {            
+    	background:url(../images/header_back_1.jpg) center center no-repeat;    
+    	background-size:cover;
+    }
+    #background-newsletter  {            
+    	background:url(../images/header_back_2.jpg) center center no-repeat;    
+    	background-size:cover;
+    }
+
 
 }
 
