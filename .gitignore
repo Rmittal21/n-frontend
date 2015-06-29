@@ -1,6 +1,8 @@
 .DS_Store
 .sass-cache
-/sass/.sass-cache
+src/sass/.sass-cache
 node_modules
 npm-debug.log
-dist/*
+dist
+src/*.html
+!src/index.html

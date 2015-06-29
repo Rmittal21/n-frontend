@@ -804,7 +804,7 @@ a {
         &:hover, &:focus {
             color:$link-hover-color-secondary;
 
-            @include border(3px, solid, $link-hover-color-secondary, full);
+            @include border(3px, solid, $link-hover-color-secondary, bottom);
         }
 
     }
@@ -902,6 +902,8 @@ form {
 	option {		background: $brand-primary;			}
 
 	[type=submit],button {
+		@extend a.cta-inverse;	
+		
 		display:block;
 		
  		@include animation(0.5s);
@@ -912,29 +914,28 @@ form {
 
 
 	}
-	button {		@extend a.cta-inverse;			}
 	
-	[type=submit] {
-		@extend a.cta-inverse;
-		@include padding(30px,right);	
-				
-		&.inverse {		
-			@extend a.cta-secondary-inverse;		
-			
-			&:hover,&:focus {
-				@include border(3px, solid, $link-color-secondary, left);
-				@include border(3px, solid, $link-color-secondary, top);
-				@include border(3px, solid, $link-color-secondary, right);
-			}
-		}
-        	
-        
-	}
+	[type=submit] {			@include padding(30px,right);			}
 	
-
 	label {		display:block;		}
 	
 	@include placeholder( $grey );
+	
+	&.dark {
+		
+		[type=text],[type=number],[type=password],[type=email],[type=tel], textarea, select {
+			color: $white;
+			
+			@include border(2px, solid, $white, bottom);
+			@include placeholder( $lightest-grey );
+		}
+		
+		[type=submit], button {
+				@extend a.cta-secondary-inverse;	
+		}
+		
+		
+	}
 
 }
 
