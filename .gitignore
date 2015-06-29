@@ -5,6 +5,6 @@ src/sass/_frontend.scss
 node_modules
 npm-debug.log
 dist
-src/*
+src/*.html
 !src/index.html
 
