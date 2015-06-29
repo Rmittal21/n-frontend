@@ -16,7 +16,7 @@
         ==========================
 */
 
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Ubuntu:400,700|Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700|Fauna+One);
 
 
 /*
@@ -25,30 +25,36 @@
         ==========================
 */
 
-$brand-primary:     rgba(0,48,91,1);
-$brand-secondary:   rgba(210,78,14,1);
-$brand-tertiary:    rgba(0,0,0,1);
+$opacity: 0.7;
 
-$brand-primary-opacity: rgba(31,69,106,0.7);
+$brand-primary:     rgba(0,47,95,1);
+$brand-secondary:   rgba(216,79,27,1);
+$brand-tertiary:    rgba(72,157,169,1);
+
+$brand-primary-opacity: rgba(0,47,95,$opacity);
 
 $lightest-grey:     rgba(233,233,233,1);
 $light-grey:        rgba(211,211,211,1);
 $grey:              rgba(186,186,186,1);
 $darker-grey:       rgba(93,93,93,1);
 $dark-grey:         rgba(45,45,45,1);
-
 $black:             rgba(0,0,0,1);
 $white:             rgba(255,255,255,1);
+
+$white-opacity:		rgba(255,255,255,$opacity);
 
 $text-color:        rgba(1,22,75,1);
 
 $font-family:        		"Ubuntu",sans-serif;
-$font-family-secondary:     "Roboto Slab", serif;
+$font-family-secondary:     "Fauna One", serif;
 $font-size:         16px;
 $line-height:       2em;
 
 $link-color:        $brand-primary;
-$link-hover-color:  darken($brand-primary,20%);
+$link-hover-color:  lighten($brand-primary,20%);
+
+$link-color-primary:	$brand-primary;
+$link-hover-color-primary:	darken($brand-primary,20%);
 
 $link-color-secondary: $brand-secondary;
 $link-hover-color-secondary:  darken($brand-secondary,20%);
@@ -246,6 +252,29 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
   -ms-transition: all $duration ease-in-out;
   -o-transition: all $duration ease-in-out;
   transition: all $duration ease-in-out;
+}
+
+@mixin placeholder($color) {
+	::-webkit-input-placeholder { /* WebKit browsers */
+	    color:    $color;
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   color:    $color;
+	   opacity:  $opacity;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   color:    $color;
+	   opacity:  $opacity;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10+ */
+	   color:    $color;
+	}
+}
+
+@mixin shadow($hor,$ver,$blur,$color) {
+	-webkit-box-shadow: $hor $ver $blur $color;
+	-moz-box-shadow:    $hor $ver $blur $color;
+	box-shadow:         $hor $ver $blur $color;
 }
 
 
@@ -572,8 +601,6 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 .l-h-15		{	line-height:1.5em;		}
 .l-h-2		{	line-height:2em;		}
 
-.f-fauna    {  font-family: 'Fauna One', serif;  }
-
 
 /*
         ======  POSITIONING  ======
@@ -583,14 +610,17 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 
 .p-relative 	{		position: relative;			}
 .p-absolute		{ 		position: absolute;			}
+.p-fixed		{		position: fixed;			}
 
 
 /*
         ======  POSITIONING  ======
 */
-.h-50           {       @include height(50px);       	} 
-.h-300          {       @include height(300px);      	} 
-.h-450			{		@include height(300px); 		}
+
+.h-50           {       @include height(50px);       } 
+.h-300          {       @include height(300px);      } 
+.h-400			{       @include height(400px);      }
+.h-500			{       @include height(500px);      }
 
 
 /*
@@ -611,9 +641,18 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
         ====== BACKGROUND ======
 */
 
+.bg-white		{	   background:$white;				}
+.bg-white-opacity	{		background:$white-opacity;			}
 .bg-primary 	{     background:$brand-primary;  	    }
 .bg-secondary	{	  background:$brand-secondary;		}
 .bg-tertiary 	{	  background:$brand-tertiary; 		}
+
+
+/*
+        ====== BACKGROUND ======
+*/
+
+.sh-light-grey	{		@include shadow(3px,3px,3px,$lightest-grey);		}
 
 
 /*
@@ -621,16 +660,25 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 */
 
 table {
+	width: 75%;
+	
+	@include margin(20px,top);
+	@include margin(20px,bottom);
     
     tr {
-        
+    
+    	@include border(1px, solid, $light-grey, bottom);
+    	
+    	&:first-child {		@include border(1px, solid, $light-grey, top);		}
     }
     
     th, td {
         
-        @include padding(20px,all);
-        @include border(1px, solid, $light-grey, bottom);
-        
+        @include padding(10px,top);
+        @include padding(10px,bottom);
+        @include padding(5px,left);
+        @include padding(5px,right);
+           
     }   
     
 }
@@ -682,7 +730,7 @@ a {
         text-decoration: none;
         outline:none;
 
-        @include border(1px,dotted,$link-hover-color, bottom);
+        @include border(1px,solid,$link-hover-color, bottom);
     }
 
     &.cta {
@@ -691,11 +739,11 @@ a {
     	text-align:center;
     	text-transform:uppercase;
     	font-weight:bold;
-    	color:$link-color;
+    	color:$link-color-primary;
     	background:none;
 
     	@include border-radius(3px);
-    	@include border(3px, solid, $link-color, full);
+    	@include border(3px, solid, $link-color-primary, full);
     	@include padding(20px, top);
     	@include padding(20px, bottom);
 
@@ -703,7 +751,7 @@ a {
     		background: $link-color;
     		color: $white;
 
-            @include border(3px, solid, $link-hover-color, bottom);
+            @include border(3px, solid, $link-hover-color-primary, bottom);
     	}
 
     }
@@ -714,11 +762,11 @@ a {
     	text-transform:uppercase;
     	font-weight:bold;
     	color:$white;
-    	background:$link-color;
+    	background:$link-color-primary;
 
     	@include border-radius(3px);
-    	@include border(3px, solid, $link-color, full);
-    	@include border(3px, solid, $link-hover-color, bottom);
+    	@include border(3px, solid, $link-color-primary, full);
+    	@include border(3px, solid, $link-hover-color-primary, bottom);
     	@include padding(20px, top);
     	@include padding(20px, bottom);
 
@@ -726,7 +774,7 @@ a {
     		background: none;
     		color: $link-color;
 
-    		@include border(3px, solid, $link-color, full);
+    		@include border(3px, solid, $link-hover-color-primary, full);
     	}
 
     }
@@ -765,13 +813,13 @@ a {
         @extend a.cta;
         
         color:$link-color-tertiary;
-        @include border(3px, solid, $brand-tertiary, full);
+        @include border(3px, solid, $link-color-tertiary, full);
 
         &:hover, &:focus {
             background: $brand-tertiary;
         	color: $white;
 
-            @include border(3px, solid, $brand-tertiary, full);
+            @include border(3px, solid,$link-hover-color-tertiary, bottom);
         }
         
     }
@@ -823,6 +871,12 @@ a {
         }
 
     }
+    
+    &.transparant-hover {
+    	
+    	&:hover,:focus {	opacity:$opacity;		}
+    	
+    }
 
     &.no-border, &.fancybox-close, &.gallery-item {		border:none;	}
 
@@ -834,9 +888,9 @@ form {
 		background:none;
 		width:100%;
         border:none;
-        color:$white;
-
-		@include border(2px, solid, $white, bottom);
+        color:$text-color;
+        
+		@include border(2px, solid, $text-color, bottom);
 	}
 	
 	select {
@@ -879,22 +933,8 @@ form {
 	
 
 	label {		display:block;		}
-
-}
-
-h1 {
-	@include animation(0.5s);
-
-	a {
-		@include animation(0.5s);
-		
-		&:hover, &:focus {
-
-			img {	opacity:0.3;	}
-
-		}
-
-	}
+	
+	@include placeholder( $grey );
 
 }
 

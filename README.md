@@ -19,6 +19,7 @@ Gulp takes care of:
  - HTML minfy
  - Image optim
  - SASS compiling
+ - Watching of changes in HTML & SASS
 
 
 ###Installation instruction
@@ -42,6 +43,8 @@ Libaries included:
   - Fancybox
   - Slick carousel
   - MMenu
+  - Isotope
+  - Google Maps API v3
   - Google Analytics snippet
 
 
@@ -53,7 +56,7 @@ Libraries included:
   - Fancybox CSS
   - Slick carousel CSS
   - MMenu CSS
-  - Google Webfont (via CDN): Open Sans ( because this is a good standard font :) )
+  - Google Webfont (via CDN): Ubuntu & Fauna One ( because these are a pretty fonts :) )
 
 
 ###Questions?

@@ -39,19 +39,6 @@ var server = {
     browser: 'firefox'
 }
 
-var displayError = function(error) {
-
-    var errorString = '[' + error.plugin + ']';
-    errorString += ' ' + error.message.replace("\n",'');
-
-    if(error.fileName)
-        errorString += ' in ' + error.fileName;
-    if(error.lineNumber)
-        errorString += ' on line ' + error.lineNumber;
-
-    console.error(errorString);
-}
-
 //Opens webserver
 gulp.task('webserver', function() {
   gulp.src( '.' )
@@ -74,7 +61,8 @@ gulp.task('css', function () {
     .pipe(sass({
         outputStyle: 'compressed',
         sourceComments: 'map',
-        includePaths : [paths.css.src]
+        includePaths : [paths.css.src],
+        errLogToConsole: true
     }))
     .pipe(gulp.dest(paths.css.dest))
     .on('error', gutil.log)

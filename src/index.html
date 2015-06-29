@@ -44,7 +44,7 @@
 
     	<div>
 
-    		<header class="full-width p-top-40 p-bottom-40">
+    		<header class="full-width p-top-40 p-bottom-40 bg-white">
 
     			<div class="container">
 
@@ -53,17 +53,16 @@
 							<a href="#" id="mobile-menu-button"><i class="fa fa-navicon"></i> Menu</a>
 						</nav>
 
-    				 	<h1 class="col-xs-8 col-md-3 m-0 text-right">
-    				 		<a href="#" title="To the homepage">
+    				 	<div class="col-xs-8 col-md-3 m-0 text-right">
+    				 		<a href="#" title="To the homepage" class="transparant-hover">
     				 			<img src="images/logo.jpg" width="100" alt="N frontend" class="visible-md visible-lg" />
     				 			<span class="visible-xs visible-sm">N</span>
     				 		</a>
-    				 	</h1>
+    				 	</div>
 
     				 	<nav class="col-md-9 visible-md visible-lg">
     				 		<ul id="main-menu" class="list-inline pull-right m-top-30">
-					    		<li><a href="#">Home</a></li>
-					    		<li><a href="#">About</a></li>
+					    		<li><a href="#" class="active">Home</a></li>
 					    		<li><a href="#">About</a></li>
 					    		<li><a href="#">Contact</a></li>
 							</ul>
@@ -89,6 +88,12 @@
 	        							<li>List item 2</li>
 	        							<li>List item 3</li>
 	        						</ul>
+	        						
+	        						<ol>
+	        							<li>List item 1</li>
+	        							<li>List item 2</li>
+	        							<li>List item 3</li>
+	        						</ol>
 
 	        						<a href="#" title="sample link">link</a>
 
@@ -118,8 +123,6 @@
                                             <a href="#" class="cta-tertiary-inverse">Call to action</a>
                                         </div>
                                     </div>
-                                    
-                                    
 
 	        						<div class="row">
                                         <div class="col-xs-12 col-md-6 m-top-20">
@@ -135,6 +138,7 @@
 	        						</div>
 
 	        						<div class="m-top-20">
+	        							<h1>Heading 1</h1>
 	        							<h2>Heading 2</h2>
 	        							<h3>Heading 3</h3>
 	        							<h4>Heading 4</h4>
@@ -143,7 +147,7 @@
 	        						</div>
 	        						
 	        						<div class="m-top-20">
-	        							<table class="table">
+	        							<table>
 	        								<tr>
 	        									<th>Name:</th>
 	        									<td>John Doe</td>
@@ -241,10 +245,11 @@
 
 						</div>
 
-
 	        	</div>
 
 	        </main>
+	        
+	        <section id="google-maps" class="full-width h-400"></section>
 
 	        <footer class="full-width p-top-40 p-bottom-40 f-s-09 border-grey-top">
 
@@ -304,6 +309,8 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.4.1/slick.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/4.7.5/js/jquery.mmenu.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.0/isotope.pkgd.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
