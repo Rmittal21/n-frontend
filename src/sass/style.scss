@@ -761,7 +761,7 @@ a {
     		background: none;
     		color: $link-color;
 
-    		@include border(3px, solid, $link-hover-color-primary, full);
+    		@include border(3px, solid, $link-color-primary, full);
     	}
 
     }
