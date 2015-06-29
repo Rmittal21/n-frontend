@@ -4,63 +4,12 @@
         ==========================
 */
 
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700|Fauna+One);
 @import "_bootstrap";
 @import "_fontawesome";
 @import "_faanimation";
 @import "_hover";
-
-
-/*
-        ==========================
-        ======  FONTS  ===========
-        ==========================
-*/
-
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700|Fauna+One);
-
-
-/*
-        ==========================
-        ======  VARIABLES  =======
-        ==========================
-*/
-
-$opacity: 0.7;
-
-$brand-primary:     rgba(0,47,95,1);
-$brand-secondary:   rgba(216,79,27,1);
-$brand-tertiary:    rgba(72,157,169,1);
-
-$brand-primary-opacity: rgba(0,47,95,$opacity);
-
-$lightest-grey:     rgba(233,233,233,1);
-$light-grey:        rgba(211,211,211,1);
-$grey:              rgba(186,186,186,1);
-$darker-grey:       rgba(93,93,93,1);
-$dark-grey:         rgba(45,45,45,1);
-$black:             rgba(0,0,0,1);
-$white:             rgba(255,255,255,1);
-
-$white-opacity:		rgba(255,255,255,$opacity);
-
-$text-color:        rgba(1,22,75,1);
-
-$font-family:        		"Ubuntu",sans-serif;
-$font-family-secondary:     "Fauna One", serif;
-$font-size:         16px;
-$line-height:       2em;
-
-$link-color:        $brand-primary;
-$link-hover-color:  lighten($brand-primary,20%);
-
-$link-color-primary:	$brand-primary;
-$link-hover-color-primary:	darken($brand-primary,20%);
-
-$link-color-secondary: $brand-secondary;
-$link-hover-color-secondary:  darken($brand-secondary,20%);
-
-$link-color-tertiary: $brand-tertiary;
-$link-hover-color-tertiary:  darken($brand-tertiary,20%);
+@import "_variables";
 
 
 /*
@@ -621,6 +570,8 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 
 
 
+
+
 .transparant	{			opacity:$opacity;			}
 
 
@@ -640,6 +591,13 @@ $link-hover-color-tertiary:  darken($brand-tertiary,20%);
 
 .a-top-0		{		@include position(0,top);		}
 .a-top-50-p		{		@include position(-50%,top);	}
+
+
+/*
+        ======  OVERFLOW ======
+*/
+
+.no-overflow	{		overflow:hidden;			}
 
 
 /*
@@ -803,7 +761,7 @@ a {
     		background: none;
     		color: $link-color;
 
-    		@include border(3px, solid, $link-hover-color-primary, full);
+    		@include border(3px, solid, $link-color-primary, full);
     	}
 
     }

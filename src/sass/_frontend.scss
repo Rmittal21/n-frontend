@@ -5,12 +5,13 @@
 */
 
 header {
-
+	 
+	 #background-header      {           background:url(../images/header_back_4jpg) center center no-repeat;    }
 }
 
 
 main {
- 	
+
  	#background-search, #background-newsletter		{		     
     	background:url(../images/header_back_3.jpg) center center no-repeat;	 
     	background-size:cover;
@@ -19,6 +20,7 @@ main {
     	background:url(../images/header_back_1.jpg) center center no-repeat;    
     	background-size:cover;
     }
+
 
 }
 
