@@ -1,4 +1,13 @@
 /*
+Theme Name: Urbanlink
+Theme URI: http://www.urbanlink.be
+Author: Group Van Damme
+Author URI: http://www.groupvandamme.eu
+Description: Urbanlink, the 2015 edition
+Version: 1.0
+License: Commercial
+*/
+/*
         ==========================
         ======  INCLUDES  ========
         ==========================
@@ -9,6 +18,7 @@
 @import "_fontawesome";
 @import "_faanimation";
 @import "_hover";
+@import "_mmenu";
 @import "_variables";
 
 
@@ -546,6 +556,7 @@
         ======    FONTS     ======
 */
 
+.f-s-06 {  font-size:0.6em;  }
 .f-s-08 {  font-size:0.8em;  }
 .f-s-09 {  font-size:0.9em;  }
 .f-s-1  {  font-size:1em;    }
@@ -554,7 +565,8 @@
 .f-s-17 {  font-size:1.75em; }
 .f-s-2  {  font-size:2em;    }
 
-.f-bold {  font-weight:bold;  }
+.f-bold     {   font-weight: 700;      }
+.f-non-bold  {   font-weight: 300;      }
 
 .f-white    {  color: $white;   }
 .f-black    {  color: $black;   }
@@ -563,14 +575,11 @@
 .f-secondary 	{	color:	$brand-secondary;	}
 .f-tertiary		{ 	color:	$brand-tertiary;	}
 
+.f-f-primary {      font-family: $font-family       }
+
 .l-h-125	{	line-height:1.25em;		}
 .l-h-15		{	line-height:1.5em;		}
 .l-h-2		{	line-height:2em;		}
-
-
-
-
-
 
 .transparant	{			opacity:$opacity;			}
 
@@ -592,6 +601,8 @@
 .a-top-0		{		@include position(0,top);		}
 .a-top-50-p		{		@include position(-50%,top);	}
 
+.js-hide        {       visibility: hidden;              }
+
 
 /*
         ======  OVERFLOW ======
@@ -610,12 +621,16 @@
 .h-500			{       @include height(500px);      }
 
 
+.w-65p          {       width:65%;                   }
+
+
 /*
         ====== BORDERS ======
 */
 
 .border-grey-top    {      @include border(1px, solid, $light-grey, top);        	}
 .border-grey-bottom {      @include border(1px, solid, $light-grey, bottom);        }
+.border-primary-full {      @include border(1px, solid, $brand-primary, full);           }
 .border-primary-top {         @include border(1px, solid, $brand-primary, top);        }
 .border-primary-bottom {      @include border(1px, solid, $brand-primary, bottom);     }
 .border-secondary-top {         @include border(1px, solid, $brand-secondary, top);        }
@@ -636,7 +651,7 @@
 
 
 /*
-        ====== BACKGROUND ======
+        ====== SHADOWS ======
 */
 
 .sh-light-grey	{		@include shadow(3px,3px,3px,$lightest-grey);		}
@@ -804,7 +819,7 @@ a {
 
         &:hover, &:focus {
             background: $brand-tertiary;
-        	color: $white;
+        	color: $link-color-primary;
 
             @include border(3px, solid,$link-hover-color-tertiary, bottom);
         }
@@ -828,7 +843,6 @@ a {
 
     &.gallery-item {
         display: block;
-        max-width:400px;
         position:relative;
         
         .caption {
@@ -846,7 +860,7 @@ a {
                 margin-top: -12px;
                 position: absolute;
                 text-align: center;
-                top: 40%;
+                top: 50%;
                 width: 100%;
             }
         }
@@ -922,7 +936,7 @@ form {
 		}
 		
 		[type=submit], button {			
-			@extend a.cta-secondary-inverse;		
+			@extend a.cta-tertiary;		
 			
 			/*@include padding(20px,top);
 			@include padding(20px, bottom);*/
@@ -944,18 +958,40 @@ h1, h2, h3, h4, h5, h6 {
 	@include margin(0,all); 
 }
 
-h1 {        font-size:2.5em;        }
-h2 {        font-size:2em;          }
-h3 {        font-size:1.8em;        }
-h4 {        font-size:1.5em;        }
-h5 {        font-size:1.2em;        }
-h6 {        font-size:1.1em;        }
+h1 {        font-size:2em;        }
+h2 {        font-size:1.75em;          }
+h3 {        font-size:1.5em;        }
+h4 {        font-size:1.25em;        }
+h5 {        font-size:1.1em;        }
+h6 {        font-size:1em;        }
 
+
+ul {
+    
+    &.no-border {
+        
+        a {
+            border:none;
+            
+            &:hover, &:focus {      border:none;        }
+        }
+    }
+    
+}
 
 /*
         ========================
         ====== CUSTOM CSS ======
         ========================
 */
+
+
+.dark-form {
+    
+    form {
+        @extend form.dark;   
+    }
+    
+}
 
 @import "_frontend";
