@@ -61,7 +61,8 @@ gulp.task('css', function () {
     .pipe(sass({
         outputStyle: 'compressed',
         sourceComments: 'map',
-        includePaths : [paths.css.src]
+        includePaths : [paths.css.src],
+        errLogToConsole: true
     }))
     .pipe(gulp.dest(paths.css.dest))
     .on('error', gutil.log)

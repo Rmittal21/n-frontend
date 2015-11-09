@@ -1,11 +1,20 @@
-/*
-        ==========================
-        ======  INCLUDES  ========
-        ==========================
-*/
+@import "../sass/_variables";
 
-@import "_variables";
-@import "_bootstrap";
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
 
 
 /*
@@ -839,7 +848,7 @@ a {
         @include border(3px, solid, $link-hover-color-secondary, bottom);
 
         &:hover, &:focus {
-            color:$link-color-secondary;
+            color:$white;
 			
 			@include border(3px, solid, $link-color-secondary, full);
         }
@@ -854,9 +863,9 @@ a {
 
         &:hover, &:focus {
             background: $brand-tertiary;
-        	color:$white;
+        	color: $link-hover-color-tertiary;
 			
-			@include border(3px, solid,$link-hover-color-tertiary, bottom);
+			@include border(3px, solid,$brand-tertiary, full);
         }
         
     }
@@ -1022,6 +1031,9 @@ form {
 		[type=submit], button {			
 			@extend a.cta-tertiary;		
 			
+			/*@include padding(20px,top);
+			@include padding(20px, bottom);*/
+			
 			&.small {
 				@include padding(10px,top);
 				@include padding(10px, bottom);
@@ -1038,8 +1050,7 @@ form {
 
 }
 
-h1, h2, h3, h4, h5, h6 {	
-	font-family: $font-family-secondary;	
+h1, h2, h3, h4, h5, h6 {		
 	line-height:1.75em;	
 	
 	@include margin(0,all); 
@@ -1115,24 +1126,6 @@ ul {
     
 }
 
-table {
-	width:100%;
-	
-	tr {
-		@include border(1px, solid, $light-grey, bottom);
-		
-		td, th {
-			@include padding(10px, top);
-			@include padding(10px, bottom);
-			@include padding(10px, right);
-		}
-		
-		&:last-child {		border:none;		}
-		
-	}
-	
-}
-
 /*
         =============================================
         ====== WHEN ALL STARTS TO FAINT BLACK  ======
@@ -1181,6 +1174,18 @@ table {
 	}
 	
 }
+
+
+/*
+        =============================================
+        ======       SPECIFIC IE STYLES		   ======
+        =============================================
+*/
+
+.no-ie {
+	display: none;
+}
+
 
 
 /*
