@@ -839,7 +839,7 @@ a {
         @include border(3px, solid, $link-hover-color-secondary, bottom);
 
         &:hover, &:focus {
-            color:$white;
+            color:$link-color-secondary;
 			
 			@include border(3px, solid, $link-color-secondary, full);
         }
@@ -854,9 +854,9 @@ a {
 
         &:hover, &:focus {
             background: $brand-tertiary;
-        	color: $link-hover-color-tertiary;
+        	color:$white;
 			
-			@include border(3px, solid,$brand-tertiary, full);
+			@include border(3px, solid,$link-hover-color-tertiary, bottom);
         }
         
     }
@@ -1022,9 +1022,6 @@ form {
 		[type=submit], button {			
 			@extend a.cta-tertiary;		
 			
-			/*@include padding(20px,top);
-			@include padding(20px, bottom);*/
-			
 			&.small {
 				@include padding(10px,top);
 				@include padding(10px, bottom);
@@ -1041,7 +1038,8 @@ form {
 
 }
 
-h1, h2, h3, h4, h5, h6 {		
+h1, h2, h3, h4, h5, h6 {	
+	font-family: $font-family-secondary;	
 	line-height:1.75em;	
 	
 	@include margin(0,all); 

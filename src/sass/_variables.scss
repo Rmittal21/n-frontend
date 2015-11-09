@@ -4,7 +4,7 @@
         ==========================
 */
 
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700|Pathway+Gothic+One);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif|Imprima);
 
 
 /*
@@ -15,9 +15,9 @@
 
 $opacity: 0.8;
 
-$brand-primary:     rgba(0,0,0,1);
-$brand-secondary:   rgba(255,255,255,1);
-$brand-tertiary:    rgba(255,255,255,1);
+$brand-primary:     rgba(123,156,127,1);
+$brand-secondary:  	rgba(233,167,53,1);
+$brand-tertiary:    rgba(139,23,20,1);
 
 $brand-primary-opacity: 	rgba(0,0,0,$opacity);
 $brand-secondary-opacity: 	rgba(218,69,1,$opacity);
@@ -35,9 +35,9 @@ $red:				rgba(255,0,0,1);
 
 $text-color:        rgba(51,51,51,1);
 
-$font-family:        			"Roboto Slab",sans-serif;
-$font-family-secondary:    	 	"Pathway Gothic One", cursive;
-$font-family-tertiary:			"Georgia", serif;
+$font-family:        			"Imprima",sans-serif;
+$font-family-secondary:    	 	"Bree Serif", cursive;
+$font-family-tertiary:			"Times", serif;
 
 $font-size:         			16px;
 $line-height:       			2em;
