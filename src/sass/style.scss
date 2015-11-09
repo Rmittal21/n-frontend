@@ -1117,6 +1117,24 @@ ul {
     
 }
 
+table {
+	width:100%;
+	
+	tr {
+		@include border(1px, solid, $light-grey, bottom);
+		
+		td, th {
+			@include padding(10px, top);
+			@include padding(10px, bottom);
+			@include padding(10px, right);
+		}
+		
+		&:last-child {		border:none;		}
+		
+	}
+	
+}
+
 /*
         =============================================
         ====== WHEN ALL STARTS TO FAINT BLACK  ======
