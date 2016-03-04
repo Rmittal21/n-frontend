@@ -6,9 +6,7 @@ $(document).ready(function() {
 		resize();
 	});
 
-	$("#mobile-menu").mmenu({
-        navbar: false
-	});
+	$("#mobile-menu").mmenu();
 	
 	$(".fancybox").fancybox({
 		padding		: 0
@@ -158,12 +156,6 @@ $(document).ready(function() {
 		
 		google.maps.event.addDomListener(window, "load", initialize);
 	}
-
-	if ( $( ".video" ).length ) {
-
-        $(".video").get(0).play();
-
-    }
 
     if ( $("#auto-popup").length && document.cookie.indexOf("state_popup") <= 0) {
 

@@ -16,6 +16,10 @@ var paths = {
         dest: './dist/css/',
         filename: 'style.scss'
     },
+    iecss: {
+	  	src: './src/sass-ie/*.scss',
+	  	dest: './dist/ie/'
+    },
     js: {
         src: './js',
         files: './src/js/**/*.js',
@@ -68,6 +72,17 @@ gulp.task('css', function () {
     .on('error', gutil.log)
 });
 
+gulp.task('iecss', function () {
+    gulp.src(paths.iecss.src)
+    .pipe(sass({
+        outputStyle: 'compressed',
+        errLogToConsole: true
+    }))
+    .pipe(gulp.dest(paths.iecss.dest))
+    .on('error', gutil.log)
+});
+
+
 //Throw JS together and minify
 gulp.task('js', function() {  
     gulp.src(paths.js.files)
@@ -98,9 +113,10 @@ gulp.task('html', function() {
 //Look for changes
 gulp.task('watch', function() {
   gulp.watch(paths.css.files, ['css']);
+  gulp.watch(paths.iecss.src, ['iecss']);
   gulp.watch(paths.js.files, ['js']);
   gulp.watch(paths.html.src, ['html']);
 });
 
 //Serve up the fancy part
-gulp.task('serve', ['css','js','images','html','webserver','openbrowser','watch']);
+gulp.task('serve', ['css','iecss','js','images','html','webserver','openbrowser','watch']);

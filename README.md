@@ -56,12 +56,12 @@ Libraries included:
   - Fancybox CSS
   - Slick carousel CSS
   - MMenu CSS
-  - Google Webfont (via CDN): Ubuntu & Fauna One ( because these are a pretty fonts :) )
+  - Google Webfont (via CDN): Ubuntu & Fauna One ( because these are pretty fonts :) )
 
 
 ###Questions?
 
-ruttennicky@me.com
+ruttennicky@gmail.com
 
 ###Issues & featues
 
