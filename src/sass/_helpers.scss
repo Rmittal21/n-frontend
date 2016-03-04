@@ -346,6 +346,9 @@
 .p-left-200   {   @include padding(200px,left);    }
 .p-left-250   {   @include padding(250px,left);    }
 .p-left-300   {   @include padding(300px,left);    }
+.p-left-310   {   @include padding(310px,left);    }
+.p-left-315   {   @include padding(315px,left);    }
+.p-left-325   {   @include padding(325px,left);    }
 .p-left-350   {   @include padding(350px,left);    }
 .p-left-400   {   @include padding(400px,left);    }
 .p-right-0    {   @include padding(0,right);       }
@@ -562,6 +565,7 @@
 .f-secondary 	{	color:	$brand-secondary;	}
 .f-tertiary		{ 	color:	$brand-tertiary;	}
 .f-white-opacity {	color:	$white-opacity;		}
+.f-green		 {	color:	$green;				}
 
 .f-f-primary 	{   font-family: $font-family       			}
 .f-f-secondary 	{	font-family: $font-family-secondary;		}
@@ -571,6 +575,10 @@
 .l-h-125	{	line-height:1.25em;		}
 .l-h-15		{	line-height:1.5em;		}
 .l-h-2		{	line-height:2em;		}
+.l-h-25		{	line-height:2.5em;		}
+.l-h-3		{	line-height:3em;		}
+.l-h-35		{	line-height:3.5em;		}
+.l-h-4		{	line-height:4em;		}
 
 .transparant	{			opacity:$opacity;			}
 
@@ -588,9 +596,12 @@
 
 
 .a-left-0		{		@include position(0,left);		}
+.a-left-5p		{		@include position(5%,left);		}
 
 .a-top-0		{		@include position(0,top);		}
-.a-top-50-p		{		@include position(-50%,top);	}
+.a-top-5p		{		@include position(5%, top);		}
+
+.a-top--50p		{		@include position(-50%,top);	}
 
 .js-hide        {       visibility: hidden;              }
 
@@ -615,9 +626,18 @@
 .h-400			{       @include height(400px);      }
 .h-500			{       @include height(500px);      }
 
+.h-2em			{		height:2em;					 }
+.h-3em			{		height:3em;					 }
+.h-4em			{		height:4em;					 }
+
 .h-100p			{		height:100%;				 }
 .h-auto			{		height:auto;				 }
 
+.w-15p			{		width:15%;					 }
+.w-20p			{		width:20%;					 }
+.w-25p			{		width:25%;					 }
+.w-35p			{		width:35%;					 }
+.w-50p			{		width:50%;					 }
 .w-65p          {       width:65%;                   }
 
 .a-b-0			{ 		bottom:0;					 }
@@ -632,19 +652,25 @@
         ====== BORDERS ======
 */
 
+.corners					{		@include border-radius(3px)									};
+
+.border-grey-left    	 	{      @include border(1px, solid, $light-grey, left);        		}
 .border-grey-top    	 	{      @include border(1px, solid, $light-grey, top);        		}
 .border-grey-bottom 		{      @include border(1px, solid, $light-grey, bottom);        	}
 .border-primary-full 		{      @include border(1px, solid, $brand-primary, full);          	}
 .border-primary-top 		{      @include border(1px, solid, $brand-primary, top);        	}
 .border-primary-bottom 		{      @include border(1px, solid, $brand-primary, bottom);     	}
+.border-secondary-left 		{      @include border(1px, solid, $brand-secondary, left);        	}
 .border-secondary-top 		{      @include border(1px, solid, $brand-secondary, top);        	}
 .border-secondary-bottom 	{      @include border(1px, solid, $brand-secondary, bottom);     	}
+.border-secondary-full		{      @include border(1px, solid, $brand-secondary, full);        	}
 .border-tertiary-top	 	{      @include border(1px, solid, $brand-secondary, top);        	}
 .border-tertiary-bottom 	{      @include border(1px, solid, $brand-secondary, bottom);     	}
 .border-lightest-grey-full 	{	   @include border(1px, solid, $lightest-grey, full);			}
 .border-light-grey-full	 	{	   @include border(1px, solid, $light-grey, full);				}
 .border-light-grey-top 		{	   @include border(1px, solid, $light-grey, top);				}
 .border-light-grey-bottom 	{	   @include border(1px, solid, $light-grey, bottom);			}
+.border-white-full			{	   @include border(1px, solid, $white, full);					}
 .border-white-bottom		{	   @include border(1px, solid, $white, bottom);					}
 
 /*
@@ -695,10 +721,12 @@
 
 @media (max-width: $screen-sm-max) {
 	
+	.sm-text-left 	{	text-align:left;	            }
 	.sm-text-center {	text-align:center;	            }
 	.sm-text-right	{	text-align:right;				}
 	
 	.sm-m-top-10    {   @include margin(10px, top);     }
+	.sm-m-top-15	{   @include margin(15px, top);     }
 	.sm-m-top-20    {   @include margin(20px, top);     }
 	.sm-m-top-30    {   @include margin(30px, top);     }
     .sm-m-top-40    {   @include margin(40px, top);     }
@@ -718,27 +746,13 @@
     .sm-no-border	{	border:none;					}
     
     .sm-f-s-2		{	font-size:2em;				}
-
-}
-
-@media (min-width: $screen-md-min) {
-	
-	.row-eq-height {
-		display: -webkit-box;
-	    display: -webkit-flex;
-	    display: -ms-flexbox;
-	    display: flex;
-		flex-wrap: wrap;
+    
+	.f-s-1, .f-s-12, .f-s-15, .f-s-175  {  
+			font-size:1em;   
 	}
-	
-	.row-eq-height > [class*="col-"] {
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		flex-wrap: wrap;
-	}
-
+	.f-s-2  {  	font-size:1.25em;     	}
+	.f-s-3	{	font-size:2em;	  		}
+	.f-s-5  {  	font-size:3em;     		}
 }
 
 
@@ -781,20 +795,18 @@ a {
     }
 
     &.cta {
-
     	display:inline-block;
     	text-align:center;
     	text-transform:uppercase;
     	color:$link-color-primary;
-    	font-weight:700;
     	background:none;
-    	
-    	@include border(3px, solid, $link-color-primary, full);
+
     	@include border-radius($border-radius);
+    	@include border(3px, solid, $link-color-primary, full);
     	@include padding(20px, top);
     	@include padding(20px, bottom);
     	@include padding(40px, left);
-    	@include padding(40px, right);    	
+    	@include padding(40px, right);
 
     	&:hover, &:focus {
     		background: $link-color;
@@ -807,6 +819,19 @@ a {
 	    	@include padding(10px, top);
 			@include padding(10px, bottom);
     	}
+    	
+    	&.very-small {
+	    	@include padding(5px, top);
+			@include padding(5px, bottom);
+    	}
+    	
+    	&.tiny {
+	    	display: inline;
+			@include padding(5px,left);
+			@include padding(5px,right);
+			@include padding(3px,top);
+			@include padding(3px,bottom);	
+		}
 
     }
 
@@ -825,6 +850,14 @@ a {
 
     		@include border(3px, solid, $link-color-primary, full);
     	}
+    	
+    	&.tiny {
+	    	display: inline;
+			@include padding(5px,left);
+			@include padding(5px,right);
+			@include padding(3px,top);
+			@include padding(3px,bottom);	
+		}
 
     }
 
@@ -887,18 +920,6 @@ a {
         }
         
     }
-    
-    .parent-element {
-	  -webkit-transform-style: preserve-3d;
-	  -moz-transform-style: preserve-3d;
-	  transform-style: preserve-3d;
-	}
-
-	.element {
-	  position: relative;
-	  top: 50%;
-	  transform: translateY(-50%);
-	}
     
     &.gallery-item {
         display: block;
@@ -975,28 +996,36 @@ form {
 
 	[type=text],[type=number],[type=password],[type=email],[type=tel], textarea, select {
 		background:none;
-		width:100%;
+		//width:100%;
         border:none;
         color:$text-color;
+        font-weight: 400;
         
-		@include padding(5px,left);
-		@include padding(5px,right);
-		@include padding(5px,top);
-		@include padding(5px,bottom);
-		@include border(1px, solid, lighten($text-color,50%), bottom);
+		@include padding(15px,left);
+		@include padding(15px,right);
+		@include padding(7px,top);
+		@include padding(7px,bottom);
+		@include border(1px, solid, lighten($text-color,50%), full);
 		
 		&.no-border {		border:none;			}
+		&.no-size	{	 	width: auto;			}
+		
+		&.small 	{
+			@include padding(5px,left);
+			@include padding(5px,right);
+			@include padding(5px,top);
+			@include padding(5px,bottom);
+		}
 	}
 	
 	select, option {
 		@include padding(10px,left);
-		@include padding(10px,top);
-		@include padding(10px,bottom);
+		@include padding(5px,top);
+		@include padding(5px,bottom);
+			
 	}
 	
 	option {		background: $white;			}
-	
-	textarea {		resize:vertical ;			}
 
 	input[type=submit],button {
 		@extend a.cta-inverse;	
@@ -1007,20 +1036,35 @@ form {
 		
 		&.small {
 			@include padding(10px,top);
-			@include padding(10px, bottom);
+			@include padding(10px,bottom);
 		}
 
 		&.very-small {
 			@include padding(5px,top);
-			@include padding(5px, bottom);
+			@include padding(5px,bottom);
 			
 		}	
+		
+		&.tiny {
+			width:auto;
+			@include padding(5px,left);
+			@include padding(5px,right);
+			@include padding(3px,top);
+			@include padding(3px,bottom);	
+		}
 
 	}
 	
-	input[type=submit] {			@include padding(30px,right);			}
+	textarea 			{			resize: vertical						}
 	
-	label {		display:block;		}
+	input[type=submit] 	{			@include padding(30px,right);			}
+	
+	label {		
+		display:block;
+		font-weight: 400;	
+		
+		&.inline {		display: inline;		}
+	}
 	
 	@include placeholder( $grey );
 	
@@ -1042,6 +1086,8 @@ form {
 			}
 			
 			&.very-small {
+				font-sisze:0.9em;
+				
 				@include padding(5px,top);
 				@include padding(5px, bottom);
 				
@@ -1087,14 +1133,15 @@ ul {
 		@include margin(20px,top);
 		
 		li {
-			border:none;
+			@include border(1px,$grey,solid,bottom);
 			
 			a {
 				color:$link-color;
-				
-				@include border(1px,$grey,solid,bottom);
+				border:none;
+
 				@include padding(40px,top);
 				@include padding(40px,bottom);
+				
 				
 				&:hover,&:focus,&.active {
 					color:$link-hover-color;
@@ -1109,6 +1156,7 @@ ul {
 			
 			}
 		}
+		
 	}
     
     
@@ -1205,7 +1253,26 @@ table {
 
 .mm-menu {
 	background: $lightest-grey;	
+	
+
+	.mm-next {
+	
+		&::before {		border-left:none;			}
+	
+	}
+	
+	.mm-navbar {
+		
+		a {
+			border-bottom: none;
+			
+			&:hover, &:focus, &:active {		border-bottom: none;		}
+		}
+		
+	}
 }
+
+
 
 .ninja-forms-response-msg   {      
         
@@ -1230,8 +1297,8 @@ table {
 .affix {
 	z-index: 99;
 	
-	@include animation(0.5s);
 	@include padding(15px, top);
-	@include padding(15px, bottom);	
-	@include border(1px, solid, $light-grey, bottom); 
+	@include padding(15px, bottom);
+	@include animation(0.5s);
+	
 }
