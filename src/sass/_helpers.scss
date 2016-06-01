@@ -566,6 +566,7 @@
 .f-tertiary		{ 	color:	$brand-tertiary;	}
 .f-white-opacity {	color:	$white-opacity;		}
 .f-green		 {	color:	$green;				}
+.f-light-grey	 {	color:	$light-grey;		}
 
 .f-f-primary 	{   font-family: $font-family       			}
 .f-f-secondary 	{	font-family: $font-family-secondary;		}
@@ -686,6 +687,8 @@
 .border-white-full			{	   @include border(1px, solid, $white, full);					}
 .border-white-bottom		{	   @include border(1px, solid, $white, bottom);					}
 
+.border-light-grey-full-dashed {	@include border(2px, dotted, $light-grey, full);			}
+
 /*
         ====== BACKGROUND ======
 */
@@ -716,6 +719,8 @@
 @media (max-width: $screen-xs-max) {
 
 	.xs-text-center {	text-align:center;	            }
+	
+    .xs-m-top-20    {   @include margin(20px,top);      }
     .xs-m-top-40    {   @include margin(40px,top);      }
     
     .xs-p-top-0     {   @include padding(0, top);       }
@@ -1116,6 +1121,16 @@ h1, h2, h3, h4, h5, h6 {
 	line-height:1.75em;	
 	
 	@include margin(0,all); 
+	
+	.marked {
+		background:	$brand-primary;
+		color:	$white;
+		
+		@include padding(20px, left);
+		@include padding(20px, right);
+		@include padding(10px, top);
+		@include padding(10px, bottom);
+	}
 }
 
 h1 {        
@@ -1240,7 +1255,7 @@ table {
 .marked {
 	
 	a {
-		background: $brand-secondary;
+		background: $brand-primary;
 		color: $white;
 		border:none;
 		
@@ -1250,7 +1265,8 @@ table {
 		@include padding(5px,bottom);
 		
 		&:hover, &:focus, &:active {
-			background: darken($brand-secondary,10%);	
+			color: $black;
+			background: $brand-secondary;	
 		}
 		
 	}
@@ -1293,18 +1309,18 @@ table {
     
 }
 .ninja-forms-success-msg, .mc4wp-success   {
- 	@extend .alert;      
-	@extend .alert-success;       
+ 	//@extend .alert;      
+	//@extend .alert-success;       
 }
 
 .mc4wp-notice {
-	@extend .alert;      
-	@extend .alert-info;    
+	//@extend .alert;      
+	//@extend .alert-info;    
 }
 
 .ninja-forms-error-msg     {          
-	@extend .alert;
-	@extend .alert-danger;   
+	//@extend .alert;
+	//@extend .alert-danger;   
 }
 
 .affix {
