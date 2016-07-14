@@ -8,6 +8,15 @@ $(document).ready(function() {
 
 	$("#mobile-menu").mmenu();
 	
+	var mobilemenu = $('#mobile-menu').data('mmenu');
+	mobilemenu.bind('opened', function () {
+	    $("#mobile-menu-button > i").addClass("fa-rotate-90");
+	});
+	
+	mobilemenu.bind('closed', function () {
+	    $("#mobile-menu-button > i").removeClass("fa-rotate-90");
+	});
+	
 	$(".fancybox").fancybox({
 		padding		: 0
 	});

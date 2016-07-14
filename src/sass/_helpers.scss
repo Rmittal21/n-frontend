@@ -7,65 +7,53 @@
 @mixin margin($value,$side)
 {
     @if $side == left {
-        @media (max-width: $screen-xs-min) {
-            margin-left:$value/2;
-        }
-        @media (min-width: $screen-xs-min) {
-            margin-left:$value/2;
+        @media (max-width: $screen-xs-max) {
+            margin-left:$value*0.6;
         }
         @media (min-width: $screen-sm-min) {
-            margin-left:$value/2;
+            margin-left:$value*0.75;
         }
         @media (min-width: $screen-md-min) {
-            margin-left:$value/2;
+            margin-left:$value;
         }
         @media (min-width: $screen-lg-min) {
             margin-left:$value;
         }
     } @else if $side == right {
-        @media (max-width: $screen-xs-min) {
-            margin-right:$value/2;
-        }
-        @media (min-width: $screen-xs-min) {
-            margin-right:$value/2;
+        @media (max-width: $screen-xs-max) {
+            margin-right:$value*0.6;
         }
         @media (min-width: $screen-sm-min) {
-            margin-right:$value/2;
+            margin-right:$value*0.75;
         }
         @media (min-width: $screen-md-min) {
-            margin-right:$value/2;
+            margin-right:$value;
         }
         @media (min-width: $screen-lg-min) {
             margin-right:$value;
         }
     } @else if $side == top {
-        @media (max-width: $screen-xs-min) {
-            margin-top:$value/2;
-        }
-        @media (min-width: $screen-xs-min) {
-            margin-top:$value/2;
+        @media (max-width: $screen-xs-max) {
+            margin-top:$value*0.6;
         }
         @media (min-width: $screen-sm-min) {
-            margin-top:$value/2;
+            margin-top:$value*0.75;
         }
         @media (min-width: $screen-md-min) {
-            margin-top:$value/2;
+            margin-top:$value;
         }
         @media (min-width: $screen-lg-min) {
             margin-top:$value;
         }
     } @else if $side == bottom {
-        @media (max-width: $screen-xs-min) {
-            margin-bottom:$value/2;
-        }
-        @media (min-width: $screen-xs-min) {
-            margin-bottom:$value/2;
+        @media (max-width: $screen-xs-max) {
+            margin-bottom:$value*0.6;
         }
         @media (min-width: $screen-sm-min) {
-            margin-bottom:$value/2;
+            margin-bottom:$value*0.75;
         }
         @media (min-width: $screen-md-min) {
-            margin-bottom:$value/2;
+            margin-bottom:$value;
         }
         @media (min-width: $screen-lg-min) {
             margin-bottom:$value;
@@ -76,65 +64,53 @@
 @mixin padding($value,$side)
 {
     @if $side == left {
-        @media (max-width: $screen-xs-min) {
-            padding-left:$value/2;
-        }
-        @media (min-width: $screen-xs-min) {
-            padding-left:$value/2;
+        @media (max-width: $screen-xs-max) {
+            padding-left:$value*0.6;
         }
         @media (min-width: $screen-sm-min) {
-            padding-left:$value/2;
+            padding-left:$value*0.75;
         }
         @media (min-width: $screen-md-min) {
-            padding-left:$value/2;
+            padding-left:$value;
         }
         @media (min-width: $screen-lg-min) {
             padding-left:$value;
         }
     } @else if $side == right {
-        @media (max-width: $screen-xs-min) {
-            padding-right:$value/2;
-        }
-        @media (min-width: $screen-xs-min) {
-            padding-right:$value/2;
+        @media (max-width: $screen-xs-max) {
+            padding-right:$value*0.6;
         }
         @media (min-width: $screen-sm-min) {
-            padding-right:$value/2;
+            padding-right:$value*0.75;
         }
         @media (min-width: $screen-md-min) {
-            padding-right:$value/2;
+            padding-right:$value;
         }
         @media (min-width: $screen-lg-min) {
             padding-right:$value;
         }
     } @else if $side == top {
-        @media (max-width: $screen-xs-min) {
-            padding-top:$value/2;
-        }
-        @media (min-width: $screen-xs-min) {
-            padding-top:$value/2;
+        @media (max-width: $screen-xs-max) {
+            padding-top:$value*0.75;
         }
         @media (min-width: $screen-sm-min) {
-            padding-top:$value/2;
+            padding-top:$value*0.75;
         }
         @media (min-width: $screen-md-min) {
-            padding-top:$value/2;
+            padding-top:$value;
         }
         @media (min-width: $screen-lg-min) {
             padding-top:$value;
         }
     } @else if $side == bottom {
-        @media (max-width: $screen-xs-min) {
-            padding-bottom:$value/2;
-        }
-        @media (min-width: $screen-xs-min) {
-            padding-bottom:$value/2;
+        @media (max-width: $screen-xs-max) {
+            padding-bottom:$value*0.6;
         }
         @media (min-width: $screen-sm-min) {
-            padding-bottom:$value/2;
+            padding-bottom:$value*0.75;
         }
         @media (min-width: $screen-md-min) {
-            padding-bottom:$value/2;
+            padding-bottom:$value;
         }
         @media (min-width: $screen-lg-min) {
             padding-bottom:$value;
@@ -164,17 +140,14 @@
 }
 
 @mixin height($value) {
-    @media (max-width: $screen-xs-min) {
-        height:$value/2;
-    }
-    @media (min-width: $screen-xs-min) {
-        height:$value/2;
+    @media (max-width: $screen-xs-max) {
+        height:$value*0.6;
     }
     @media (min-width: $screen-sm-min) {
-        height:$value/2;
+        height:$value*0.85;
     }
     @media (min-width: $screen-md-min) {
-        height:$value/2;
+        height:$value;
     }
     @media (min-width: $screen-lg-min) {
         height:$value;
@@ -190,18 +163,18 @@
 }
 
 @mixin placeholder($color) {
-	::-webkit-input-placeholder { /* WebKit browsers */
+	::-webkit-input-placeholder {
 	    color:    $color;
 	}
-	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	:-moz-placeholder {
 	   color:    $color;
 	   opacity:  $opacity;
 	}
-	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	::-moz-placeholder {
 	   color:    $color;
 	   opacity:  $opacity;
 	}
-	:-ms-input-placeholder { /* Internet Explorer 10+ */
+	:-ms-input-placeholder {
 	   color:    $color;
 	}
 }
@@ -235,11 +208,9 @@
 
 
 /*
-        ==========================
-        ======   HELPERS    ======
-        ==========================
-
+		==========================
         ======   PADDINGS   ======
+        ==========================
 */
 
 .p-0          {   @include padding(0,all);         }
@@ -389,7 +360,9 @@
 
 
 /*
+		==========================
         ======    MARGINS   ======
+        ==========================
 */
 
 .m-0          {   @include margin(0,all);         }
@@ -536,7 +509,9 @@
 
 
 /*
+		==========================
         ======    FONTS     ======
+        ==========================
 */
 
 .f-s-06 {  font-size:0.6em;  }
@@ -557,20 +532,24 @@
 .f-upper	 {	 text-transform: uppercase;	}
 
 
-.f-white    {  color: $white;   }
-.f-black    {  color: $black;   }
-.f-grey     {  color: $grey;    }
-.f-red		{  color: $red;		}
-.f-primary 	{  color: $brand-primary;	}
-.f-secondary 	{	color:	$brand-secondary;	}
-.f-tertiary		{ 	color:	$brand-tertiary;	}
-.f-white-opacity {	color:	$white-opacity;		}
-.f-green		 {	color:	$green;				}
-.f-light-grey	 {	color:	$light-grey;		}
+.f-white    	 {  	color:$white;   			}
+.f-white-opacity {		color:$white-opacity;		}
+.f-black    	 {  	color:$black;   			}
+.f-grey     	 {  	color:$grey;    			}
+.f-red			 {  	color:$red;					}
+.f-green		 {		color:$green;				}
 
-.f-f-primary 	{   font-family: $font-family       			}
-.f-f-secondary 	{	font-family: $font-family-secondary;		}
-.f-f-tertiary	{	font-family: $font-family-tertiary;			}
+.f-primary 		 {  	color:$brand-primary;		}
+.f-secondary 	 {		color:$brand-secondary;		}
+.f-third		 { 		color:$brand-third;			}
+.f-fourth		 {		color:$brand-fourth;		}
+
+.f-grey			 {		color:$grey;				}
+.f-light-grey	 {		color:$light-grey;			}
+
+.f-f-primary 	 {   	font-family: $font-family       			}
+.f-f-secondary 	 {		font-family: $font-family-secondary;		}
+.f-f-third		 {		font-family: $font-family-third;			}
 
 .l-h-1		{	line-height:1em;		}
 .l-h-125	{	line-height:1.25em;		}
@@ -584,9 +563,19 @@
 .transparant	{			opacity:$opacity;			}
 
 
+/*
+		=======================
+        ======  OVERFLOW ======
+        =======================
+*/
+
+.no-overflow	{		overflow:hidden;			}
+
 
 /*
+		===========================
         ======  POSITIONING  ======
+        ===========================
 */
 
 .full-width,.js-full-screen 	{  	 	width:100%;     }
@@ -595,34 +584,14 @@
 .p-absolute		{ 		position: absolute;			}
 .p-fixed		{		position: fixed;			}
 
-
-.a-left-0		{		@include position(0,left);		}
-.a-left-5p		{		@include position(5%,left);		}
-
-.a-top-0		{		@include position(0,top);		}
-.a-top-5p		{		@include position(5%, top);		}
-
-.a-top--50p		{		@include position(-50%,top);	}
-
 .js-hide        {       visibility: hidden;              }
-
-
-/*
-        ======  OVERFLOW ======
-*/
-
-.no-overflow	{		overflow:hidden;			}
-
-
-/*
-        ======  POSITIONING  ======
-*/
 
 .h-1           	{       @include height(1px);        } 
 .h-3           	{       @include height(3px);        } 
 .h-5           	{       @include height(5px);        } 
 .h-10           {       @include height(10px);       } 
 .h-50           {       @include height(50px);       } 
+.h-100			{		@include height(100px);		 }
 .h-300          {       @include height(300px);      } 
 .h-400			{       @include height(400px);      }
 .h-500			{       @include height(500px);      }
@@ -641,50 +610,92 @@
 .w-50p			{		width:50%;					 }
 .w-65p          {       width:65%;                   }
 
-.a-b-0			{ 		bottom:0;					 }
+.a-l-0			{		left:0;						 }
+
+.a-r-0			{		right:0;					 }
+
 .a-t-0			{		top:0;						 }
-.a-t-m-50p		{		top:-50%;					 }
-.a-t-m-75p		{		top:-75%;					 }
+.a-t---50p		{		top:-50%;					 }
+.a-t---75p		{		top:-75%;					 }
+
+.a-b-0			{ 		bottom:0;					 }
 
 .block			{		display: block;				 }
 
 
 /*
+		=====================
         ====== BORDERS ======
+        =====================
 */
 
-.corners					{		@include border-radius(3px)									};
+.corners					 {	    @include border-radius(3px);								}
 
-.border-grey-left    	 	{      @include border(1px, solid, $light-grey, left);        		}
-.border-grey-top    	 	{      @include border(1px, solid, $light-grey, top);        		}
-.border-grey-bottom 		{      @include border(1px, solid, $light-grey, bottom);        	}
-.border-primary-full 		{      @include border(1px, solid, $brand-primary, full);          	}
-.border-primary-top 		{      @include border(1px, solid, $brand-primary, top);        	}
-.border-primary-bottom 		{      @include border(1px, solid, $brand-primary, bottom);     	}
-.border-secondary-left 		{      @include border(1px, solid, $brand-secondary, left);        	}
-.border-secondary-top 		{      @include border(1px, solid, $brand-secondary, top);        	}
-.border-secondary-bottom 	{      @include border(1px, solid, $brand-secondary, bottom);     	}
-.border-secondary-full		{      @include border(1px, solid, $brand-secondary, full);        	}
-.border-tertiary-top	 	{      @include border(1px, solid, $brand-secondary, top);        	}
-.border-tertiary-bottom 	{      @include border(1px, solid, $brand-secondary, bottom);     	}
-.border-lightest-grey-full 	{	   @include border(1px, solid, $lightest-grey, full);			}
-.border-light-grey-full	 	{	   @include border(1px, solid, $light-grey, full);				}
-.border-light-grey-top 		{	   @include border(1px, solid, $light-grey, top);				}
-.border-light-grey-bottom 	{	   @include border(1px, solid, $light-grey, bottom);			}
-.border-white-full			{	   @include border(1px, solid, $white, full);					}
-.border-white-bottom		{	   @include border(1px, solid, $white, bottom);					}
+.border-lightest-grey-full   {      @include border(1px,solid,$light-grey,full);        		}	
+.border-lightest-grey-left   {      @include border(1px,solid,$light-grey,left);        		}
+.border-lightest-grey-right  {      @include border(1px,solid,$light-grey,right);        		}
+.border-lightest-grey-top    {      @include border(1px,solid,$light-grey,top);        			}
+.border-lightest-grey-bottom {      @include border(1px,solid,$light-grey,bottom);        		}
+	
+.border-light-grey-full    	 {      @include border(1px,solid,$light-grey,full);        		}	
+.border-light-grey-left    	 {      @include border(1px,solid,$light-grey,left);        		}
+.border-light-grey-right   	 {      @include border(1px,solid,$light-grey,right);        		}
+.border-light-grey-top    	 {      @include border(1px,solid,$light-grey,top);        			}
+.border-light-grey-bottom 	 {      @include border(1px,solid,$light-grey,bottom);        		}
 
-.border-light-grey-full-dashed {	@include border(2px, dotted, $light-grey, full);			}
+.border-grey-full    	 	 {      @include border(1px,solid,$grey,full);        				}	
+.border-grey-left    		 {      @include border(1px,solid,$grey,left);        				}
+.border-grey-right   	 	 {	    @include border(1px,solid,$grey,right);        				}
+.border-grey-top    	 	 {      @include border(1px,solid,$grey,top);        				}
+.border-grey-bottom 	 	 {      @include border(1px,solid,$grey,bottom);        			}
+
+.border-primary-full 		 {      @include border(1px,solid,$brand-primary,full);          	}
+.border-primary-left 		 {      @include border(1px,solid,$brand-primary,left);        		}
+.border-primary-right 		 {      @include border(1px,solid,$brand-primary,right);        	}
+.border-primary-top 		 {      @include border(1px,solid,$brand-primary,top);        		}
+.border-primary-bottom 		 {      @include border(1px,solid,$brand-primary,bottom);     		}
+
+.border-secondary-full 		 {      @include border(1px,solid,$brand-secondary,full);        	}
+.border-secondary-left 		 {      @include border(1px,solid,$brand-secondary,left);        	}
+.border-secondary-right 	 {      @include border(1px,solid,$brand-secondary,right);        	}
+.border-secondary-top 		 {      @include border(1px,solid,$brand-secondary,top);        	}
+.border-secondary-bottom 	 {      @include border(1px,solid,$brand-secondary,bottom);     	}
+
+.border-third-full 			 {      @include border(1px,solid,$brand-third,full);        		}
+.border-third-left 			 {      @include border(1px,solid,$brand-third,left);        		}
+.border-third-right 		 {      @include border(1px,solid,$brand-third,right);        		}
+.border-third-top 			 {      @include border(1px,solid,$brand-third,top);        		}
+.border-third-bottom 		 {      @include border(1px,solid,$brand-third,bottom);     		}
+
+.border-fourth-full 		 {      @include border(1px,solid,$brand-fourth,full);        		}
+.border-fourth-left 		 {      @include border(1px,solid,$brand-fourth,left);        		}
+.border-fourth-right 		 {      @include border(1px,solid,$brand-fourth,right);        		}
+.border-fourth-top 			 {      @include border(1px,solid,$brand-fourth,top);        		}
+.border-fourth-bottom 		 {      @include border(1px,solid,$brand-fourth,bottom);     		}
+
+.border-white-full			 {	    @include border(1px,solid,$white,full);						}
+.border-white-left			 {	    @include border(1px,solid,$white,left);						}
+.border-white-right			 {	    @include border(1px,solid,$white,right);					}
+.border-white-top			 {	    @include border(1px,solid,$white,top);						}
+.border-white-bottom		 {	    @include border(1px,solid,$white,bottom);					}
+
 
 /*
+		========================
         ====== BACKGROUND ======
+        ========================
 */
 
 .bg-white		  {	    background:$white;					}
 .bg-white-opacity {		background:$white-opacity;			}
+.bg-black		  {		background:$black;					}
+.bg-black-opacity {		background:$black-opacity;			}
+
 .bg-primary 	  {     background:$brand-primary;  	    }
 .bg-secondary	  {	    background:$brand-secondary;		}
-.bg-tertiary 	  {	    background:$brand-tertiary; 		}
+.bg-third 	  	  {	    background:$brand-third; 			}
+.bg-fourth		  {		background:$brand-fourth;			}
+
 .bg-lightest-grey {		background:$lightest-grey;			}
 .bg-light-grey	  {		background:$light-grey;				}
 .bg-grey		  {		background:$grey;					}
@@ -693,76 +704,18 @@
 
 
 /*
+		=====================
         ====== SHADOWS ======
+        =====================
 */
 
 .sh-light-grey	{		@include shadow(3px,3px,3px,5px,$lightest-grey);		}
 
 
-/*
-        ====== RESPONSIVE HELPERS ======
-*/
-
-@media (max-width: $screen-xs-max) {
-
-	.xs-text-center {	text-align:center;	            }
-	
-    .xs-m-top-20    {   @include margin(20px,top);      }
-    .xs-m-top-40    {   @include margin(40px,top);      }
-    
-    .xs-p-top-0     {   @include padding(0, top);       }
-    .xs-p-top-60	{	@include padding(60px, top);	}
-    
-    .xs-p-bottom-60 {	@include padding(60px, bottom);	}
-    
-    .xs-full-width  {   width:100%;                     }
-	
-	.xs-f-s-12		{	font-size:1.2em;				}    
-    .xs-f-s-15		{	font-size:1.5em;				}
-    .xs-f-s-2		{	font-size:2em;					}
-    
-    .xs-no-border	{	border:none;					}
-}
-
-@media (max-width: $screen-sm-max) {
-	
-	.sm-text-left 	{	text-align:left;	            }
-	.sm-text-center {	text-align:center;	            }
-	.sm-text-right	{	text-align:right;				}
-	
-	.sm-m-top-10    {   @include margin(10px, top);     }
-	.sm-m-top-15	{   @include margin(15px, top);     }
-	.sm-m-top-20    {   @include margin(20px, top);     }
-	.sm-m-top-30    {   @include margin(30px, top);     }
-    .sm-m-top-40    {   @include margin(40px, top);     }
-    
-    .sm-p-top-0		{	padding-top: 0; 				}
-    .sm-p-top-60	{	@include padding(60px, top);	}
-    
-    .sm-p-bottom-0	{	padding-bottom: 0;				}
-    .sm-p-bottom-60	{	@include padding(60px, bottom);	}
-    
-    .sm-full-width  {   width:100%;                     }
-    
-    .sm-no-bg		{	background: none;				}
-    
-    .sm-bg-primary-opacity { 	background:$brand-primary-opacity; 		}
-    
-    .sm-no-border	{	border:none;					}
-    
-    .sm-f-s-2		{	font-size:2em;				}
-    
-	.f-s-1, .f-s-12, .f-s-15, .f-s-175  {  
-			font-size:1em;   
-	}
-	.f-s-2  {  	font-size:1.25em;     	}
-	.f-s-3	{	font-size:2em;	  		}
-	.f-s-5  {  	font-size:3em;     		}
-}
-
-
-/*
+/*	
+		===========================
         ====== HTML SELECTORS =====
+        ===========================
 */
 
 * {		outline: none;		}
@@ -784,6 +737,61 @@ body {
     color:          $text-color;
 }
 
+
+/*
+        =============================================
+        ====== WHEN ALL STARTS TO FAINT BLACK  ======
+        =============================================
+*/
+
+.dark {
+	
+	color:$dark-text-color;
+	
+	form {			@extend form.dark;   		}
+	
+	a	 {		
+		color:$dark-link-color;	
+					
+		@include border(1px,dotted,$dark-link-color,bottom);
+		
+		&:hover, &:focus, &.active {
+			color:$dark-link-hover-color;
+
+			@include border(1px,solid,$dark-link-hover-color, bottom);
+		}
+	}
+	
+}
+
+
+/*
+        =============================================
+        ======   AN ETIQUETTE STYLE ELEMENT    ======
+        =============================================
+*/
+
+.marked {
+	
+	a {
+		background: $brand-primary;
+		color: $white;
+		border:none;
+		
+		@include padding(10px,left);
+		@include padding(10px,right);
+		@include padding(5px,top);
+		@include padding(5px,bottom);
+		
+		&:hover, &:focus, &:active {
+			color: $black;
+			background: $brand-secondary;	
+		}
+		
+	}
+	
+}
+
 a {
     color:$link-color;
     text-decoration: none;
@@ -796,10 +804,10 @@ a {
         text-decoration: none;
         outline:none;
 
-        @include border(1px,solid,$link-hover-color, bottom);
+        @include border(1px,solid,$link-hover-color,bottom);
     }
 
-    &.cta {
+    &.cta-primary {
     	display:inline-block;
     	text-align:center;
     	text-transform:uppercase;
@@ -807,22 +815,17 @@ a {
     	background:none;
 
     	@include border-radius($border-radius);
-    	@include border(3px, solid, $link-color-primary, full);
-    	@include padding(20px, top);
-    	@include padding(20px, bottom);
+    	@include border(3px,solid,$link-color-primary,full);
+    	@include padding(10px, top);
+    	@include padding(10px, bottom);
     	@include padding(40px, left);
     	@include padding(40px, right);
 
-    	&:hover, &:focus {
+    	&:hover,&:focus,&:active {
     		background: $link-color;
     		color: $white;
 
-            @include border(3px, solid, $link-hover-color-primary, bottom);
-    	}
-    	
-    	&.small {
-	    	@include padding(10px, top);
-			@include padding(10px, bottom);
+            @include border(3px,solid,$link-hover-color-primary,bottom);
     	}
     	
     	&.very-small {
@@ -831,99 +834,148 @@ a {
     	}
     	
     	&.tiny {
-	    	display: inline;
 			@include padding(5px,left);
 			@include padding(5px,right);
 			@include padding(3px,top);
 			@include padding(3px,bottom);	
 		}
-
     }
 
-    &.cta-inverse {
-     	@extend a.cta;
+    &.cta-primary-inverse {
+     	@extend a.cta-primary;
     	
     	color:$white;
     	background:$link-color-primary;
 
-    	@include border(3px, solid, $link-color-primary, full);
-    	@include border(3px, solid, $link-hover-color-primary, bottom);
+    	@include border(3px,solid, $link-color-primary,full);
+    	@include border(3px,solid, $link-hover-color-primary,bottom);
 
-    	&:hover, &:focus {
+    	&:hover,&:focus,&:active {
     		background: none;
     		color: $link-color;
 
-    		@include border(3px, solid, $link-color-primary, full);
+    		@include border(3px,solid, $link-color-primary,full);
     	}
-    	
-    	&.tiny {
-	    	display: inline;
-			@include padding(5px,left);
-			@include padding(5px,right);
-			@include padding(3px,top);
-			@include padding(3px,bottom);	
-		}
-
     }
 
     &.cta-secondary {
-        @extend a.cta;
+        @extend a.cta-primary;
 
         color:$link-color-secondary;
-        @include border(3px, solid, $link-color-secondary, full);
+        
+        @include border(3px,solid,$link-color-secondary,full);
 
-        &:hover, &:focus {
+        &:hover,&:focus,&:active {
             background: $link-color-secondary;
             color: $white;
 
-            @include border(3px, solid, $link-hover-color-secondary, bottom);
+            @include border(3px,solid,$link-hover-color-secondary,bottom);
         }
-
     }
 
     &.cta-secondary-inverse {
-        @extend a.cta-inverse;
+        @extend a.cta-primary-inverse;
 
         background:$link-color-secondary;
-        @include border(3px, solid, $link-color-secondary, full);
-        @include border(3px, solid, $link-hover-color-secondary, bottom);
+        
+        @include border(3px,solid,$link-color-secondary,full);
+        @include border(3px,solid,$link-hover-color-secondary,bottom);
 
-        &:hover, &:focus {
+        &:hover,&:focus,&:active {
             color:$link-color-secondary;
 			
-			@include border(3px, solid, $link-color-secondary, full);
+			@include border(3px,solid,$link-color-secondary,full);
         }
-
     }
     
-    &.cta-tertiary {
-        @extend a.cta;
+    &.cta-third {
+        @extend a.cta-primary;
         
-        color:$link-color-tertiary;
-        @include border(3px, solid, $link-color-tertiary, full);
+        color:$link-color-third;
+        
+        @include border(3px,solid,$link-color-third,full);
 
-        &:hover, &:focus {
-            background: $brand-tertiary;
+        &:hover,&:focus,&:active {
+            background: $brand-third;
         	color:$white;
 			
-			@include border(3px, solid,$link-hover-color-tertiary, bottom);
+			@include border(3px,solid,$link-hover-color-third,bottom);
         }
-        
     }
     
-    &.cta-tertiary-inverse {
-        @extend a.cta-inverse;
+    &.cta-third-inverse {
+        @extend a.cta-primary-inverse;
         
-        background:$link-color-tertiary;
-        @include border(3px, solid, $link-color-tertiary, full);
-        @include border(3px, solid, $link-hover-color-tertiary, bottom);
+        background:$link-color-third;
+        
+        @include border(3px,solid, $link-color-third,full);
+        @include border(3px,solid, $link-hover-color-third,bottom);
 
-        &:hover, &:focus {
-            color:$link-color-tertiary;
+        &:hover,&:focus,&:active {
+            color:$link-color-third;
 
-            @include border(3px, solid, $link-color-tertiary, full);
+            @include border(3px,solid,$link-color-third,full);
         }
+    }
+    
+    &.cta-fourth {
+	    @extend a.cta-primary;
         
+        color:$link-color-fourth;
+        
+        @include border(3px,solid,$link-color-fourth,full);
+
+        &:hover,&:focus,&:active {
+            background: $brand-fourth;
+        	color:$white;
+			
+			@include border(3px,solid,$link-hover-color-fourth,bottom);
+        }
+    }
+    
+    &.cta-fourth-inverse {
+	    @extend a.cta-primary-inverse;
+        
+        background:$link-color-fourth;
+        
+        @include border(3px,solid, $link-color-fourth,full);
+        @include border(3px,solid, $link-hover-color-fourth,bottom);
+
+        &:hover,&:focus,&:active {
+            color:$link-color-fourth;
+
+            @include border(3px,solid,$link-color-fourth,full);
+        } 
+    }
+    
+    &.cta-white {
+		@extend a.cta-primary;
+	 
+		color:$white;
+	 	
+		@include border(3px,solid,$white,full);
+	 	
+		&:hover,&:focus,&:active {
+            color:$black;
+			background:$white;
+			
+            @include border(3px,solid,$white,full);
+        }
+    }
+    
+    &.cta-black {
+	    @extend a.cta-primary;
+	    
+	    color:$black;
+	    
+	    @include border(3px,solid,$black,full);
+	    
+	    &:hover,&:focus,&:active {
+            color:$white;
+			background:$black;
+			
+            @include border(3px,solid,$black,full);
+        }
     }
     
     &.gallery-item {
@@ -955,19 +1007,17 @@ a {
             }
         }
 
-        &:hover, &:focus {
+        &:hover,&:focus,&:active {
 
             .caption {      opacity:1;      }
 
         }
-
     }
     
     &.gallery-item-non-hover {
 	    @extend a.gallery-item;
 	    
 	    .caption {		opacity: 1;			}
-	    
     }
     
     &.gallery-item-no-bg {
@@ -977,20 +1027,16 @@ a {
 			background: none;
 			opacity: 1;			
 		}
-	    
     }
     
     &.secondary {
 	    color:$link-color-secondary;
 	    
 	    &:hover, &:focus, &:active {	color:$link-hover-color-secondary;		}
-	    
     }
     
     &.transparant-hover {
-    	
     	&:hover,&:focus {	opacity:$opacity;		}
-    	
     }
 
     &.no-border, &.fancybox-close, &.gallery-item {		border:none;	}
@@ -998,8 +1044,7 @@ a {
 }
 
 form {
-
-	[type=text],[type=number],[type=password],[type=email],[type=tel], textarea, select {
+	[type=text],[type=number],[type=password],[type=email],[type=tel],[type=date], textarea, select {
 		background:none;
 		width:100%;
         border:none;
@@ -1010,7 +1055,8 @@ form {
 		@include padding(15px,right);
 		@include padding(7px,top);
 		@include padding(7px,bottom);
-		@include border(1px, solid, lighten($text-color,50%), full);
+		@include border(1px,solid,$light-grey,full);
+		@include placeholder($grey);
 		
 		&.no-border {		border:none;			}
 		&.no-size	{	 	width: auto;			}
@@ -1020,6 +1066,10 @@ form {
 			@include padding(5px,right);
 			@include padding(5px,top);
 			@include padding(5px,bottom);
+		}
+		
+		&:focus {
+			@include border(1px,solid,$text-color,full);
 		}
 	}
 	
@@ -1033,7 +1083,7 @@ form {
 	option {		background: $white;			}
 
 	input[type=submit],button {
-		@extend a.cta-inverse;	
+		@extend a.cta-primary-inverse;	
 		
  		@include animation(0.5s);
 		@include padding(30px,left);
@@ -1057,7 +1107,6 @@ form {
 			@include padding(3px,top);
 			@include padding(3px,bottom);	
 		}
-
 	}
 	
 	textarea 			{			resize: vertical						}
@@ -1066,24 +1115,25 @@ form {
 	
 	label {		
 		display:block;
-		font-weight: 400;	
 		
 		&.inline {		display: inline;		}
 	}
 	
-	@include placeholder( $grey );
 	
 	&.dark {
-		
-		[type=text],[type=number],[type=password],[type=email],[type=tel], textarea, select {
-			color: $white;
+		[type=text],[type=number],[type=password],[type=email],[type=tel],[type=date],textarea,select {
+			color: $dark-text-color;
 			
-			@include border(2px, solid, $white, bottom);
-			@include placeholder( $lightest-grey );
+			@include border(2px,solid,$light-grey,full);
+			@include placeholder($white);
+			
+			&:focus {
+				@include border(2px,solid,$white,full);
+			}
 		}
 		
 		[type=submit], button {			
-			@extend a.cta-tertiary;		
+			@extend a.cta-white;		
 			
 			&.small {
 				@include padding(10px,top);
@@ -1098,9 +1148,7 @@ form {
 				
 			}	
 		}
-		
 	}
-
 }
 
 h1, h2, h3, h4, h5, h6 {	
@@ -1121,9 +1169,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {        
-		font-size:2em;        	
+	font-size:2em;        	
 		
-		p {		margin:0;		}
+	p {		margin:0;		}
 }
 h2 {        font-size:1.75em;       }
 h3 {        font-size:1.5em;        }
@@ -1132,13 +1180,11 @@ h5 {        font-size:1.1em;        }
 h6 {        font-size:1em;        	}
 
 ul {
-    
     &.no-border {
-        
         a {
             border:none;
             
-            &:hover, &:focus {      border:none;        }
+            &:hover,&:focus,&:active {      border:none;        }
         }
     }
     
@@ -1171,9 +1217,7 @@ ul {
 			
 			}
 		}
-		
 	}
-    
     
     li {
 	    
@@ -1183,13 +1227,9 @@ ul {
 		}
 	    
 	    &.current_page_item, &.current-page-ancestor, &.menu-item-home {
-		    
 		    a {		@extend a.active;  	}
-		    
 	    }
-	    
     }
-    
 }
 
 table {
@@ -1205,58 +1245,41 @@ table {
 		}
 		
 		&:last-child {		border:none;		}
-		
 	}
-	
 }
+
 
 /*
-        =============================================
-        ====== WHEN ALL STARTS TO FAINT BLACK  ======
-        =============================================
+		================================
+        ====== RESPONSIVE HELPERS ======
+        ================================
 */
 
-.dark {
-	
-	color:$white;
-	
-	form {			@extend form.dark;   		}
-	
-	a	 {		
-		color:$white;	
-					
-		@include border(1px,dotted,$white,bottom);
-		
-		&:hover, &:focus, &.active {
-			color:$dark-link-hover-color;
+@media (max-width: $screen-xs-max) {
+	.xs-text-left	{	text-align:left;				}
+	.xs-text-center {	text-align:center;	            }
+	.xs-text-right	{	text-align:right;				}
+    
+    .xs-no-bg		{	background: none;				}
+    
+    .xs-no-border	{	border:none;					}
+}
 
-			@include border(1px,solid,$dark-link-hover-color, bottom);
-		}
-		
-		&.no-border {		border:none;		}
-	
-	}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+	.sm-text-left 	{	text-align:left;	            }
+	.sm-text-center {	text-align:center;	            }
+	.sm-text-right	{	text-align:right;				}
+    
+    .sm-no-bg		{	background: none;				}
+    
+    .sm-no-border	{	border:none;					}
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
 	
 }
 
-.marked {
-	
-	a {
-		background: $brand-primary;
-		color: $white;
-		border:none;
-		
-		@include padding(10px,left);
-		@include padding(10px,right);
-		@include padding(5px,top);
-		@include padding(5px,bottom);
-		
-		&:hover, &:focus, &:active {
-			color: $black;
-			background: $brand-secondary;	
-		}
-		
-	}
+@media (min-width: $screen-lg-min) {
 	
 }
 
@@ -1270,7 +1293,6 @@ table {
 .mm-menu {
 	background: $lightest-grey;	
 	
-
 	.mm-next {
 	
 		&::before {		border-left:none;			}
@@ -1278,36 +1300,32 @@ table {
 	}
 	
 	.mm-navbar {
-		
 		a {
 			border-bottom: none;
 			
 			&:hover, &:focus, &:active {		border-bottom: none;		}
 		}
-		
 	}
 }
 
 
-
 .ninja-forms-response-msg   {      
-        
     p {         @include margin(0,all);         }
-    
 }
+
 .ninja-forms-success-msg, .mc4wp-success   {
- 	//@extend .alert;      
-	//@extend .alert-success;       
+ 	@extend .alert;      
+	@extend .alert-success;       
 }
 
 .mc4wp-notice {
-	//@extend .alert;      
-	//@extend .alert-info;    
+	@extend .alert;      
+	@extend .alert-info;    
 }
 
 .ninja-forms-error-msg     {          
-	//@extend .alert;
-	//@extend .alert-danger;   
+	@extend .alert;
+	@extend .alert-danger;   
 }
 
 .affix {
@@ -1316,5 +1334,4 @@ table {
 	@include padding(15px, top);
 	@include padding(15px, bottom);
 	@include animation(0.5s);
-	
 }

@@ -56,7 +56,11 @@ Libraries included:
   - Fancybox CSS
   - Slick carousel CSS
   - MMenu CSS
-  - Google Webfont (via CDN): Ubuntu & Fauna One ( because these are pretty fonts :) )
+  - Google Webfonts (via CDN)
+
+
+###Tips 'n tricks
+  - Use a vibrant color as your primary color (because buttons and links will have a good visibility)
 
 
 ###Questions?

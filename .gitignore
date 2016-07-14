@@ -1,9 +1,6 @@
 .DS_Store
 .sass-cache
 src/sass/.sass-cache
-src/*.html
-src/images/*
-!src/index.html
 node_modules
 npm-debug.log
 dist
