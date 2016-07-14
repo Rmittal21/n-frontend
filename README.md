@@ -1,6 +1,6 @@
 #N frontend
 
-N frontend is a kickstart for all my latest webprojects.  This setup contains the latest CSS helpers, jQuery plugins and basic markup.
+N frontend is a kickstart for all my latest webprojects.  This setup contains the latest CSS helpers, jQuery plugins and some basic markup.
 
 
 ###Preview
@@ -19,7 +19,7 @@ Gulp takes care of:
  - HTML minfy
  - Image optim
  - SASS compiling
- - Watching of changes in HTML & SASS
+ - Watching changes in HTML & SASS
 
 
 ###Installation instruction
@@ -60,7 +60,7 @@ Libraries included:
 
 
 ###Tips 'n tricks
-  - Use a vibrant color as your primary color (because buttons and links will have a good visibility)
+  - Use a vibrant color as your primary color (for the sake of visibility of buttons and links)
 
 
 ###Questions?
