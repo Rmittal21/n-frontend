@@ -1276,11 +1276,21 @@ table {
 }
 
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-	
+	.row-eq-height{
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	}
 }
 
 @media (min-width: $screen-lg-min) {
-	
+	.row-eq-height{
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	}
 }
 
 
