@@ -828,19 +828,20 @@ a {
     	text-transform:uppercase;
     	color:$link-color-primary;
     	background:none;
-
+		border:none;
+		
+		@include border(3px,solid, $link-color-primary,full);
     	@include border-radius($border-radius);
-    	@include border(3px,solid,$link-color-primary,full);
     	@include padding(10px, top);
     	@include padding(10px, bottom);
     	@include padding(40px, left);
     	@include padding(40px, right);
 
     	&:hover,&:focus,&:active {
-    		background: $link-color;
-    		color: $white;
-
-            @include border(3px,solid,$link-hover-color-primary,bottom);
+    		background:$link-color;
+    		color:$white;
+    		
+    		@include border(3px,solid, $link-color-primary,full);
     	}
     	
     	&.very-small {
@@ -862,14 +863,11 @@ a {
     	color:$white;
     	background:$link-color-primary;
 
-    	@include border(3px,solid, $link-color-primary,full);
-    	@include border(3px,solid, $link-hover-color-primary,bottom);
+    	@include border(3px,solid,$link-color-primary,full);
 
     	&:hover,&:focus,&:active {
     		background: none;
     		color: $link-color;
-
-    		@include border(3px,solid, $link-color-primary,full);
     	}
     }
 
@@ -883,8 +881,8 @@ a {
         &:hover,&:focus,&:active {
             background: $link-color-secondary;
             color: $white;
-
-            @include border(3px,solid,$link-hover-color-secondary,bottom);
+            
+            @include border(3px,solid,$link-color-secondary,full);
         }
     }
 
@@ -894,7 +892,6 @@ a {
         background:$link-color-secondary;
         
         @include border(3px,solid,$link-color-secondary,full);
-        @include border(3px,solid,$link-hover-color-secondary,bottom);
 
         &:hover,&:focus,&:active {
             color:$link-color-secondary;
@@ -913,8 +910,8 @@ a {
         &:hover,&:focus,&:active {
             background: $brand-third;
         	color:$white;
-			
-			@include border(3px,solid,$link-hover-color-third,bottom);
+        	
+        	@include border(3px,solid,$link-color-third,full);
         }
     }
     
@@ -924,12 +921,11 @@ a {
         background:$link-color-third;
         
         @include border(3px,solid, $link-color-third,full);
-        @include border(3px,solid, $link-hover-color-third,bottom);
 
         &:hover,&:focus,&:active {
             color:$link-color-third;
-
-            @include border(3px,solid,$link-color-third,full);
+            
+            @include border(3px,solid, $link-color-third,full);
         }
     }
     
@@ -943,8 +939,8 @@ a {
         &:hover,&:focus,&:active {
             background: $brand-fourth;
         	color:$white;
-			
-			@include border(3px,solid,$link-hover-color-fourth,bottom);
+        	
+        	@include border(3px,solid,$link-color-fourth,full);
         }
     }
     
@@ -954,11 +950,10 @@ a {
         background:$link-color-fourth;
         
         @include border(3px,solid, $link-color-fourth,full);
-        @include border(3px,solid, $link-hover-color-fourth,bottom);
 
         &:hover,&:focus,&:active {
             color:$link-color-fourth;
-
+            
             @include border(3px,solid,$link-color-fourth,full);
         } 
     }
@@ -994,23 +989,25 @@ a {
     }
     
     &.gallery-item {
-        display: block;
-        position:relative;
+        @extend .p-relative;
+        @extend .block;
         
 		.caption {
         	@include animation(0.5s);
+        	
             background: $brand-primary-opacity;
             height: 100%;
             width: 100%;
             opacity: 0;
-            position: absolute;
+            
             -webkit-transform-style: preserve-3d;
 			-moz-transform-style: preserve-3d;
 			transform-style: preserve-3d;
+			
+			@extend .p-absolute;
 
             .caption-content {
                 color: $white;
-                font-size: 20px;
                 text-align: center;
 			    width: 100%;
 			    margin: auto;
