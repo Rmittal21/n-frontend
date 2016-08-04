@@ -649,6 +649,18 @@
 .border-grey-top    	 	 {      @include border(1px,solid,$grey,top);        				}
 .border-grey-bottom 	 	 {      @include border(1px,solid,$grey,bottom);        			}
 
+.border-darker-grey-full	 {		@include border(1px,solid,$darker-grey,full);				}
+.border-darker-grey-left	 {		@include border(1px,solid,$darker-grey,left);				}
+.border-darker-grey-right	 {		@include border(1px,solid,$darker-grey,right);				}
+.border-darker-grey-top	 	 {		@include border(1px,solid,$darker-grey,top);				}
+.border-darker-grey-bottom	 {		@include border(1px,solid,$darker-grey,bottom);				}
+
+.border-dark-grey-full		 {		@include border(1px,solid,$dark-grey,full);					}
+.border-dark-grey-left	 	 {		@include border(1px,solid,$dark-grey,left);					}
+.border-dark-grey-right	 	 {		@include border(1px,solid,$dark-grey,right);				}
+.border-dark-grey-top	 	 {		@include border(1px,solid,$dark-grey,top);					}
+.border-dark-grey-bottom 	 {		@include border(1px,solid,$dark-grey,bottom);				}
+
 .border-primary-full 		 {      @include border(1px,solid,$brand-primary,full);          	}
 .border-primary-left 		 {      @include border(1px,solid,$brand-primary,left);        		}
 .border-primary-right 		 {      @include border(1px,solid,$brand-primary,right);        	}
@@ -699,6 +711,9 @@
 .bg-lightest-grey {		background:$lightest-grey;			}
 .bg-light-grey	  {		background:$light-grey;				}
 .bg-grey		  {		background:$grey;					}
+.bg-darker-grey	  {		background:$darker-grey;			}
+.bg-dark-grey	  {		background:$dark-grey;				}
+
 .bg-primary-opacity		{		background:$brand-primary-opacity; 				}
 .bg-secondary-opacity	{		background:$brand-secondary-opacity; 			}
 
@@ -1137,14 +1152,14 @@ form {
 			
 			&.small {
 				@include padding(10px,top);
-				@include padding(10px, bottom);
+				@include padding(10px,bottom);
 			}
 			
 			&.very-small {
 				font-sisze:0.9em;
 				
 				@include padding(5px,top);
-				@include padding(5px, bottom);
+				@include padding(5px,bottom);
 				
 			}	
 		}
@@ -1152,19 +1167,19 @@ form {
 }
 
 h1, h2, h3, h4, h5, h6 {	
-	font-family: $font-family;	
-	line-height:1.75em;	
+	font-family:$font-family;	
+	line-height:$line-height;	
 	
 	@include margin(0,all); 
 	
 	.marked {
-		background:	$brand-primary;
-		color:	$white;
+		background:$brand-primary;
+		color:$white;
 		
-		@include padding(20px, left);
-		@include padding(20px, right);
-		@include padding(10px, top);
-		@include padding(10px, bottom);
+		@include padding(20px,left);
+		@include padding(20px,right);
+		@include padding(10px,top);
+		@include padding(10px,bottom);
 	}
 }
 
@@ -1317,7 +1332,6 @@ table {
 		}
 	}
 }
-
 
 .ninja-forms-response-msg   {      
     p {         @include margin(0,all);         }
