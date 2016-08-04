@@ -22,10 +22,24 @@ $(document).ready(function() {
 	});
 	
     $(".gallery").slick({
-    	infinite: true,
+    	infinite:true,
   		slidesToShow: 3,
   		slidesToScroll: 3,
-  		arrows: false
+  		arrows:false,
+  		dots:true,
+  		autoplay: true,
+  		autoplaySpeed: 2000
+  	});
+  	
+  	$(".gallery-header").slick({
+    	infinite:true,
+  		slidesToShow: 1,
+  		slidesToScroll: 1,
+  		arrows:false,
+  		autoplay: true,
+  		autoplaySpeed: 5000,
+  		fade: true,
+  		cssEase: 'linear'
   	});
 
   	$("#gallery-next").on("click", function(e){
