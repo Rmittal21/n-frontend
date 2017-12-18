@@ -23,13 +23,15 @@ Gulp takes care of:
 
 
 ###Installation instruction
-	
-1. Install the prerequisite gulp libraries
-    
-    ```npm install```
+
+1. Install homebrew and the Yarn package manager
+
+    ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
+    ```brew install yarn```
+    ```yarn install```
 
 2. Just run Gulp
-    
+
     ```gulp serve```
 
 3. Gulp opens Firefox on localhost, port 3333.  Enjoy the auto-reload

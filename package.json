@@ -3,11 +3,9 @@
   "description": "N frontend framework",
   "author": "Nicky Rutten",
   "license": "GPL-3.0",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ruttennicky/n-frontend.git"
-  },
+  "repository": "git://github.com/ruttennicky/n-frontend.git",
   "dependencies": {
+    "bootstrap-sass": "^3.3.7",
     "gulp": "latest",
     "gulp-concat": "latest",
     "gulp-filesize": "latest",
@@ -24,5 +22,7 @@
     "jshint": "latest",
     "opn": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "version": "1.0.0",
+  "main": "index.js"
 }
