@@ -1,14 +1,14 @@
-#N frontend
+# N frontend
 
 N frontend is a kickstart for all my latest webprojects.  This setup contains the latest CSS helpers, jQuery plugins and some basic markup.
 
 
-###Preview
+### Preview
 
 http://ruttennicky.github.io/n-frontend/
 
 
-###Gulp
+### Gulp
 N frontend comes with gulp.
 
 Gulp takes care of:
@@ -22,7 +22,7 @@ Gulp takes care of:
  - Watching changes in HTML & SASS
 
 
-###Installation instruction
+### Installation instruction
 
 1. Install homebrew, r and install dependencies of N-frontend
 
@@ -43,7 +43,7 @@ Gulp takes care of:
 3. Gulp opens Firefox on localhost, port 3333.  Enjoy the auto-reload
 
 
-###jQuery
+### jQuery
 
 Libaries included:
   - jQuery itself
@@ -56,7 +56,7 @@ Libaries included:
   - Google Analytics snippet
 
 
-###CSS
+### CSS
 Libraries included:
   - Font Awesome (via CDN)
   - Font Awesome amimation (fade & bounce)
@@ -67,15 +67,15 @@ Libraries included:
   - Google Webfonts (via CDN)
 
 
-###Tips 'n tricks
+### Tips 'n tricks
   - Use a vibrant color as your primary color (for the sake of visibility of buttons and links)
 
 
-###Questions?
+### Questions?
 
 ruttennicky@gmail.com
 
-###Issues & featues
+### Issues & featues
 
 I use Trello for this: https://trello.com/b/L1Cl4OD7/n-frontend
 
