@@ -24,13 +24,19 @@ Gulp takes care of:
 
 ###Installation instruction
 
-1. Install homebrew and the Yarn package manager
+1. Install homebrew, r and install dependencies of N-frontend
 
     ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
+
+2. Install Yarn package manage
+
     ```brew install yarn```
+
+3. Lock and load everything for N-frontend
+
     ```yarn install```
 
-2. Just run Gulp
+4. Just run Gulp
 
     ```gulp serve```
 
