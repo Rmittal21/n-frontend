@@ -24,7 +24,7 @@ Gulp takes care of:
 
 ### Installation instruction
 
-1. Install homebrew, r and install dependencies of N-frontend
+1. Install homebrew
 
     ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 
