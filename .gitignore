@@ -1,6 +1,9 @@
 .DS_Store
 .sass-cache
 src/sass/.sass-cache
+src/components/
 node_modules
 npm-debug.log
 dist
+*.lock
+*.log

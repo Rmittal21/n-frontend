@@ -13,18 +13,16 @@ var paths = {
     css: {
         src: './sass',
         files: './src/sass/**/*.scss',
-        dest: './dist/css/',
-        filename: 'style.scss'
+        dest: './dist/css/'
     },
     js: {
         src: './js',
         files: './src/js/**/*.js',
-        dest: './dist/js/',
-        filename: 'scripts.js'
+        dest: './dist/js/'
     },
     fonts: {
 	  	src: './src/fonts/**/*',
-	  	dest: './dist/fonts/'  
+	  	dest: './dist/fonts/'
     },
     images: {
         src: './src/images/**/*',
@@ -64,7 +62,6 @@ gulp.task('css', function () {
     gulp.src(paths.css.files)
     .pipe(sass({
         outputStyle: 'compressed',
-        sourceComments: 'map',
         includePaths : [paths.css.src],
         errLogToConsole: true
     }))
@@ -77,7 +74,7 @@ gulp.task('fonts',function() {
 });
 
 //Throw JS together and minify
-gulp.task('js', function() {  
+gulp.task('js', function() {
     gulp.src(paths.js.files)
     .pipe(uglify())
     .pipe(filesize())
