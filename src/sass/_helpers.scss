@@ -7,55 +7,55 @@
 @mixin margin($value,$side)
 {
     @if $side == left {
-        @media (max-width: $screen-xs-max) {
+        @include media-breakpoint-between(xs, sm) {
             margin-left:$value*0.6;
         }
-        @media (min-width: $screen-sm-min) {
+        @include media-breakpoint-between(sm, md) {
             margin-left:$value*0.75;
         }
-        @media (min-width: $screen-md-min) {
+        @include media-breakpoint-between(md, lg) {
             margin-left:$value;
         }
-        @media (min-width: $screen-lg-min) {
+        @include media-breakpoint-up(lg) {
             margin-left:$value;
         }
     } @else if $side == right {
-        @media (max-width: $screen-xs-max) {
+        @include media-breakpoint-between(xs, sm) {
             margin-right:$value*0.6;
         }
-        @media (min-width: $screen-sm-min) {
+        @include media-breakpoint-between(sm, md) {
             margin-right:$value*0.75;
         }
-        @media (min-width: $screen-md-min) {
+        @include media-breakpoint-between(md, lg) {
             margin-right:$value;
         }
-        @media (min-width: $screen-lg-min) {
+        @include media-breakpoint-up(lg) {
             margin-right:$value;
         }
     } @else if $side == top {
-        @media (max-width: $screen-xs-max) {
+        @include media-breakpoint-between(xs, sm) {
             margin-top:$value*0.6;
         }
-        @media (min-width: $screen-sm-min) {
+        @include media-breakpoint-between(sm, md) {
             margin-top:$value*0.75;
         }
-        @media (min-width: $screen-md-min) {
+        @include media-breakpoint-between(md, lg) {
             margin-top:$value;
         }
-        @media (min-width: $screen-lg-min) {
+        @include media-breakpoint-up(lg) {
             margin-top:$value;
         }
     } @else if $side == bottom {
-        @media (max-width: $screen-xs-max) {
+        @include media-breakpoint-between(xs, sm) {
             margin-bottom:$value*0.6;
         }
-        @media (min-width: $screen-sm-min) {
+        @include media-breakpoint-between(sm, md) {
             margin-bottom:$value*0.75;
         }
-        @media (min-width: $screen-md-min) {
+        @include media-breakpoint-between(md, lg) {
             margin-bottom:$value;
         }
-        @media (min-width: $screen-lg-min) {
+        @include media-breakpoint-up(lg) {
             margin-bottom:$value;
         }
     } @else {     margin:0;       }
@@ -64,55 +64,55 @@
 @mixin padding($value,$side)
 {
     @if $side == left {
-        @media (max-width: $screen-xs-max) {
+        @include media-breakpoint-between(xs, sm) {
             padding-left:$value*0.6;
         }
-        @media (min-width: $screen-sm-min) {
+        @include media-breakpoint-between(sm, md) {
             padding-left:$value*0.75;
         }
-        @media (min-width: $screen-md-min) {
+        @include media-breakpoint-between(md, lg) {
             padding-left:$value;
         }
-        @media (min-width: $screen-lg-min) {
+        @include media-breakpoint-up(lg) {
             padding-left:$value;
         }
     } @else if $side == right {
-        @media (max-width: $screen-xs-max) {
+        @include media-breakpoint-between(xs, sm) {
             padding-right:$value*0.6;
         }
-        @media (min-width: $screen-sm-min) {
+        @include media-breakpoint-between(sm, md) {
             padding-right:$value*0.75;
         }
-        @media (min-width: $screen-md-min) {
+        @include media-breakpoint-between(md, lg) {
             padding-right:$value;
         }
-        @media (min-width: $screen-lg-min) {
+        @include media-breakpoint-up(lg) {
             padding-right:$value;
         }
     } @else if $side == top {
-        @media (max-width: $screen-xs-max) {
+        @include media-breakpoint-between(xs, sm) {
             padding-top:$value*0.75;
         }
-        @media (min-width: $screen-sm-min) {
+        @include media-breakpoint-between(sm, md) {
             padding-top:$value*0.75;
         }
-        @media (min-width: $screen-md-min) {
+        @include media-breakpoint-between(md, lg) {
             padding-top:$value;
         }
-        @media (min-width: $screen-lg-min) {
+        @include media-breakpoint-up(lg) {
             padding-top:$value;
         }
     } @else if $side == bottom {
-        @media (max-width: $screen-xs-max) {
+        @include media-breakpoint-between(xs, sm) {
             padding-bottom:$value*0.6;
         }
-        @media (min-width: $screen-sm-min) {
+        @include media-breakpoint-between(sm, md) {
             padding-bottom:$value*0.75;
         }
-        @media (min-width: $screen-md-min) {
+        @include media-breakpoint-between(md, lg) {
             padding-bottom:$value;
         }
-        @media (min-width: $screen-lg-min) {
+        @include media-breakpoint-up(lg) {
             padding-bottom:$value;
         }
     } @else {     padding:0;       }
@@ -140,16 +140,16 @@
 }
 
 @mixin height($value) {
-    @media (max-width: $screen-xs-max) {
+    @include media-breakpoint-between(xs, sm) {
         height:$value*0.6;
     }
-    @media (min-width: $screen-sm-min) {
+    @include media-breakpoint-between(sm, md) {
         height:$value*0.85;
     }
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-between(md, lg) {
         height:$value;
     }
-    @media (min-width: $screen-lg-min) {
+    @include media-breakpoint-up(lg) {
         height:$value;
     }
 }
@@ -586,21 +586,20 @@
 
 .js-hide        {       visibility: hidden;              }
 
-.h-1           	{       @include height(1px);        } 
-.h-3           	{       @include height(3px);        } 
-.h-5           	{       @include height(5px);        } 
-.h-10           {       @include height(10px);       } 
-.h-50           {       @include height(50px);       } 
-.h-100			{		@include height(100px);		 }
-.h-300          {       @include height(300px);      } 
-.h-400			{       @include height(400px);      }
-.h-500			{       @include height(500px);      }
+.h-1p       {       @include height(1px);        }
+.h-3p       {       @include height(3px);        }
+.h-5p       {       @include height(5px);        }
+.h-10p      {       @include height(10px);       }
+.h-50p      {       @include height(50px);       }
+.h-100p			{	    	@include height(100px);	     }
+.h-300p     {       @include height(300px);      }
+.h-400p			{       @include height(400px);      }
+.h-500p			{       @include height(500px);      }
 
 .h-2em			{		height:2em;					 }
 .h-3em			{		height:3em;					 }
 .h-4em			{		height:4em;					 }
 
-.h-100p			{		height:100%;				 }
 .h-auto			{		height:auto;				 }
 
 .w-15p			{		width:15%;					 }
@@ -608,7 +607,7 @@
 .w-25p			{		width:25%;					 }
 .w-35p			{		width:35%;					 }
 .w-50p			{		width:50%;					 }
-.w-65p          {       width:65%;                   }
+.w-65p      {   width:65%;           }
 
 .a-l-0			{		left:0;						 }
 
@@ -631,19 +630,19 @@
 
 .corners					 {	    @include border-radius(3px);								}
 
-.border-lightest-grey-full   {      @include border(1px,solid,$light-grey,full);        		}	
+.border-lightest-grey-full   {      @include border(1px,solid,$light-grey,full);        		}
 .border-lightest-grey-left   {      @include border(1px,solid,$light-grey,left);        		}
 .border-lightest-grey-right  {      @include border(1px,solid,$light-grey,right);        		}
 .border-lightest-grey-top    {      @include border(1px,solid,$light-grey,top);        			}
 .border-lightest-grey-bottom {      @include border(1px,solid,$light-grey,bottom);        		}
-	
-.border-light-grey-full    	 {      @include border(1px,solid,$light-grey,full);        		}	
+
+.border-light-grey-full    	 {      @include border(1px,solid,$light-grey,full);        		}
 .border-light-grey-left    	 {      @include border(1px,solid,$light-grey,left);        		}
 .border-light-grey-right   	 {      @include border(1px,solid,$light-grey,right);        		}
 .border-light-grey-top    	 {      @include border(1px,solid,$light-grey,top);        			}
 .border-light-grey-bottom 	 {      @include border(1px,solid,$light-grey,bottom);        		}
 
-.border-grey-full    	 	 {      @include border(1px,solid,$grey,full);        				}	
+.border-grey-full    	 	 {      @include border(1px,solid,$grey,full);        				}
 .border-grey-left    		 {      @include border(1px,solid,$grey,left);        				}
 .border-grey-right   	 	 {	    @include border(1px,solid,$grey,right);        				}
 .border-grey-top    	 	 {      @include border(1px,solid,$grey,top);        				}
@@ -727,7 +726,7 @@
 .sh-light-grey	{		@include shadow(3px,3px,3px,5px,$lightest-grey);		}
 
 
-/*	
+/*
 		===========================
         ====== HTML SELECTORS =====
         ===========================
@@ -760,23 +759,23 @@ body {
 */
 
 .dark {
-	
+
 	color:$dark-text-color;
-	
+
 	form {			@extend form.dark;   		}
-	
-	a	 {		
-		color:$dark-link-color;	
-					
+
+	a	 {
+		color:$dark-link-color;
+
 		@include border(1px,dotted,$dark-link-color,bottom);
-		
+
 		&:hover, &:focus, &.active {
 			color:$dark-link-hover-color;
 
 			@include border(1px,solid,$dark-link-hover-color, bottom);
 		}
 	}
-	
+
 }
 
 
@@ -787,30 +786,30 @@ body {
 */
 
 .marked {
-	
+
 	a {
 		background: $brand-primary;
 		color: $white;
 		border:none;
-		
+
 		@include padding(10px,left);
 		@include padding(10px,right);
 		@include padding(5px,top);
 		@include padding(5px,bottom);
-		
+
 		&:hover, &:focus, &:active {
 			color: $black;
-			background: $brand-secondary;	
+			background: $brand-secondary;
 		}
-		
+
 	}
-	
+
 }
 
 a {
     color:$link-color;
     text-decoration: none;
-	
+
 	@include animation(0.5s);
     @include border(1px,dotted,$link-color,bottom);
 
@@ -829,7 +828,7 @@ a {
     	color:$link-color-primary;
     	background:none;
 		border:none;
-		
+
 		@include border(3px,solid, $link-color-primary,full);
     	@include border-radius($border-radius);
     	@include padding(10px, top);
@@ -840,26 +839,26 @@ a {
     	&:hover,&:focus,&:active {
     		background:$link-color;
     		color:$white;
-    		
+
     		@include border(3px,solid, $link-color-primary,full);
     	}
-    	
+
     	&.very-small {
 	    	@include padding(5px, top);
 			@include padding(5px, bottom);
     	}
-    	
+
     	&.tiny {
 			@include padding(5px,left);
 			@include padding(5px,right);
 			@include padding(3px,top);
-			@include padding(3px,bottom);	
+			@include padding(3px,bottom);
 		}
     }
 
     &.cta-primary-inverse {
      	@extend a.cta-primary;
-    	
+
     	color:$white;
     	background:$link-color-primary;
 
@@ -875,13 +874,13 @@ a {
         @extend a.cta-primary;
 
         color:$link-color-secondary;
-        
+
         @include border(3px,solid,$link-color-secondary,full);
 
         &:hover,&:focus,&:active {
             background: $link-color-secondary;
             color: $white;
-            
+
             @include border(3px,solid,$link-color-secondary,full);
         }
     }
@@ -890,120 +889,120 @@ a {
         @extend a.cta-primary-inverse;
 
         background:$link-color-secondary;
-        
+
         @include border(3px,solid,$link-color-secondary,full);
 
         &:hover,&:focus,&:active {
             color:$link-color-secondary;
-			
+
 			@include border(3px,solid,$link-color-secondary,full);
         }
     }
-    
+
     &.cta-third {
         @extend a.cta-primary;
-        
+
         color:$link-color-third;
-        
+
         @include border(3px,solid,$link-color-third,full);
 
         &:hover,&:focus,&:active {
             background: $brand-third;
         	color:$white;
-        	
+
         	@include border(3px,solid,$link-color-third,full);
         }
     }
-    
+
     &.cta-third-inverse {
         @extend a.cta-primary-inverse;
-        
+
         background:$link-color-third;
-        
+
         @include border(3px,solid, $link-color-third,full);
 
         &:hover,&:focus,&:active {
             color:$link-color-third;
-            
+
             @include border(3px,solid, $link-color-third,full);
         }
     }
-    
+
     &.cta-fourth {
 	    @extend a.cta-primary;
-        
+
         color:$link-color-fourth;
-        
+
         @include border(3px,solid,$link-color-fourth,full);
 
         &:hover,&:focus,&:active {
             background: $brand-fourth;
         	color:$white;
-        	
+
         	@include border(3px,solid,$link-color-fourth,full);
         }
     }
-    
+
     &.cta-fourth-inverse {
 	    @extend a.cta-primary-inverse;
-        
+
         background:$link-color-fourth;
-        
+
         @include border(3px,solid, $link-color-fourth,full);
 
         &:hover,&:focus,&:active {
             color:$link-color-fourth;
-            
+
             @include border(3px,solid,$link-color-fourth,full);
-        } 
+        }
     }
-    
+
     &.cta-white {
 		@extend a.cta-primary;
-	 
+
 		color:$white;
-	 	
+
 		@include border(3px,solid,$white,full);
-	 	
+
 		&:hover,&:focus,&:active {
             color:$black;
 			background:$white;
-			
+
             @include border(3px,solid,$white,full);
         }
     }
-    
+
     &.cta-black {
 	    @extend a.cta-primary;
-	    
+
 	    color:$black;
-	    
+
 	    @include border(3px,solid,$black,full);
-	    
+
 	    &:hover,&:focus,&:active {
             color:$white;
 			background:$black;
-			
+
             @include border(3px,solid,$black,full);
         }
     }
-    
+
     &.gallery-item {
         @extend .p-relative;
         @extend .block;
-        
+
 		.caption {
         	@include animation(0.5s);
-        	
+
             background: $brand-primary-opacity;
             height: 100%;
             width: 100%;
             opacity: 0;
-            
+
             -webkit-transform-style: preserve-3d;
 			-moz-transform-style: preserve-3d;
 			transform-style: preserve-3d;
-			
+
 			@extend .p-absolute;
 
             .caption-content {
@@ -1025,28 +1024,28 @@ a {
 
         }
     }
-    
+
     &.gallery-item-non-hover {
 	    @extend a.gallery-item;
-	    
+
 	    .caption {		opacity: 1;			}
     }
-    
+
     &.gallery-item-no-bg {
 	    @extend a.gallery-item;
-	    
-	    .caption {		
+
+	    .caption {
 			background: none;
-			opacity: 1;			
+			opacity: 1;
 		}
     }
-    
+
     &.secondary {
 	    color:$link-color-secondary;
-	    
+
 	    &:hover, &:focus, &:active {	color:$link-hover-color-secondary;		}
     }
-    
+
     &.transparant-hover {
     	&:hover,&:focus {	opacity:$opacity;		}
     }
@@ -1062,45 +1061,45 @@ form {
         border:none;
         color:$text-color;
         font-weight: 400;
-        
+
 		@include padding(15px,left);
 		@include padding(15px,right);
 		@include padding(7px,top);
 		@include padding(7px,bottom);
 		@include border(1px,solid,$light-grey,full);
 		@include placeholder($grey);
-		
+
 		&.no-border {		border:none;			}
 		&.no-size	{	 	width: auto;			}
-		
+
 		&.small 	{
 			@include padding(5px,left);
 			@include padding(5px,right);
 			@include padding(5px,top);
 			@include padding(5px,bottom);
 		}
-		
+
 		&:focus {
 			@include border(1px,solid,$text-color,full);
 		}
 	}
-	
+
 	select, option {
 		@include padding(10px,left);
 		@include padding(5px,top);
 		@include padding(5px,bottom);
-			
+
 	}
-	
+
 	option {		background: $white;			}
 
 	input[type=submit],button {
-		@extend a.cta-primary-inverse;	
-		
+		@extend a.cta-primary-inverse;
+
  		@include animation(0.5s);
 		@include padding(30px,left);
 		@include padding(40px,right);
-		
+
 		&.small {
 			@include padding(10px,top);
 			@include padding(10px,bottom);
@@ -1109,70 +1108,70 @@ form {
 		&.very-small {
 			@include padding(5px,top);
 			@include padding(5px,bottom);
-			
-		}	
-		
+
+		}
+
 		&.tiny {
 			width:auto;
 			@include padding(5px,left);
 			@include padding(5px,right);
 			@include padding(3px,top);
-			@include padding(3px,bottom);	
+			@include padding(3px,bottom);
 		}
 	}
-	
+
 	textarea 			{			resize: vertical						}
-	
+
 	input[type=submit] 	{			@include padding(30px,right);			}
-	
-	label {		
+
+	label {
 		display:block;
-		
+
 		&.inline {		display: inline;		}
 	}
-	
-	
+
+
 	&.dark {
 		[type=text],[type=number],[type=password],[type=email],[type=tel],[type=date],textarea,select {
 			color: $dark-text-color;
-			
+
 			@include border(2px,solid,$light-grey,full);
 			@include placeholder($white);
-			
+
 			&:focus {
 				@include border(2px,solid,$white,full);
 			}
 		}
-		
-		[type=submit], button {			
-			@extend a.cta-white;		
-			
+
+		[type=submit], button {
+			@extend a.cta-white;
+
 			&.small {
 				@include padding(10px,top);
 				@include padding(10px,bottom);
 			}
-			
+
 			&.very-small {
 				font-sisze:0.9em;
-				
+
 				@include padding(5px,top);
 				@include padding(5px,bottom);
-				
-			}	
+
+			}
 		}
 	}
 }
 
-h1, h2, h3, h4, h5, h6 {	
-	font-family:$font-family;	
-	line-height:$line-height;	
-	
-	@include margin(0,all); 
-	
+h1, h2, h3, h4, h5, h6 {
+	font-family:$font-family;
+	line-height:$line-height;
+
+	@include margin(0,all);
+
 	.marked {
 		background:$brand-primary;
 		color:$white;
-		
+
 		@include padding(20px,left);
 		@include padding(20px,right);
 		@include padding(10px,top);
@@ -1180,9 +1179,9 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-h1 {        
-	font-size:2em;        	
-		
+h1 {
+	font-size:2em;
+
 	p {		margin:0;		}
 }
 h2 {        font-size:1.75em;       }
@@ -1195,49 +1194,49 @@ ul {
     &.no-border {
         a {
             border:none;
-            
+
             &:hover,&:focus,&:active {      border:none;        }
         }
     }
-    
+
     &.mm-listview {
 		font-size:1em;
-		
+
 		@include margin(20px,top);
-		
+
 		li {
 			@include border(1px,$grey,solid,bottom);
-			
+
 			a {
 				color:$link-color;
 				border:none;
 
 				@include padding(40px,top);
 				@include padding(40px,bottom);
-				
-				
+
+
 				&:hover,&:focus,&.active {
 					color:$link-hover-color;
 				}
 			}
-			
+
 			&:not(.mm-divider) {
-				
+
 				&::after {
 					border:none;
 				}
-			
+
 			}
 		}
 	}
-    
+
     li {
-	    
-	    p { 	
+
+	    p {
 		    display:inline;
-		    margin:0;		
+		    margin:0;
 		}
-	    
+
 	    &.current_page_item, &.current-page-ancestor, &.menu-item-home {
 		    a {		@extend a.active;  	}
 	    }
@@ -1246,63 +1245,45 @@ ul {
 
 table {
 	width:100%;
-	
+
 	tr {
 		@include border(1px, solid, $light-grey, bottom);
-		
+
 		td, th {
 			@include padding(10px, top);
 			@include padding(10px, bottom);
 			@include padding(10px, right);
 		}
-		
+
 		&:last-child {		border:none;		}
 	}
 }
 
 
 /*
-		================================
+		    ================================
         ====== RESPONSIVE HELPERS ======
         ================================
 */
 
-@media (max-width: $screen-xs-max) {
-	.xs-text-left	{	text-align:left;				}
-	.xs-text-center {	text-align:center;	            }
+@include media-breakpoint-between(xs, sm) {
+	.xs-text-left	  {	text-align:left;				}
+	.xs-text-center {	text-align:center;	    }
 	.xs-text-right	{	text-align:right;				}
-    
-    .xs-no-bg		{	background: none;				}
-    
-    .xs-no-border	{	border:none;					}
+
+    .xs-no-bg		  {	background: none;				}
+
+    .xs-no-border	{	border:none;					  }
 }
 
-@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-	.sm-text-left 	{	text-align:left;	            }
-	.sm-text-center {	text-align:center;	            }
-	.sm-text-right	{	text-align:right;				}
-    
-    .sm-no-bg		{	background: none;				}
-    
-    .sm-no-border	{	border:none;					}
-}
+@include media-breakpoint-between(sm, md) {
+	.sm-text-left 	{	text-align:left;	       }
+	.sm-text-center {	text-align:center;	     }
+	.sm-text-right	{	text-align:right;				 }
 
-@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-	.row-eq-height{
-	  display: -webkit-box;
-	  display: -webkit-flex;
-	  display: -ms-flexbox;
-	  display: flex;
-	}
-}
+  .sm-no-bg	  	{	  background: none;				 }
 
-@media (min-width: $screen-lg-min) {
-	.row-eq-height{
-	  display: -webkit-box;
-	  display: -webkit-flex;
-	  display: -ms-flexbox;
-	  display: flex;
-	}
+  .sm-no-border	{	  border:none;					   }
 }
 
 
@@ -1313,45 +1294,45 @@ table {
 */
 
 .mm-menu {
-	background: $lightest-grey;	
-	
+	background: $lightest-grey;
+
 	.mm-next {
-	
+
 		&::before {		border-left:none;			}
-	
+
 	}
-	
+
 	.mm-navbar {
 		a {
 			border-bottom: none;
-			
+
 			&:hover, &:focus, &:active {		border-bottom: none;		}
 		}
 	}
 }
 
-.ninja-forms-response-msg   {      
+.ninja-forms-response-msg   {
     p {         @include margin(0,all);         }
 }
 
 .ninja-forms-success-msg, .mc4wp-success   {
- 	@extend .alert;      
-	@extend .alert-success;       
+ 	@extend .alert;
+	@extend .alert-success;
 }
 
 .mc4wp-notice {
-	@extend .alert;      
-	@extend .alert-info;    
+	@extend .alert;
+	@extend .alert-info;
 }
 
-.ninja-forms-error-msg     {          
+.ninja-forms-error-msg     {
 	@extend .alert;
-	@extend .alert-danger;   
+	@extend .alert-danger;
 }
 
 .affix {
 	z-index: 99;
-	
+
 	@include padding(15px, top);
 	@include padding(15px, bottom);
 	@include animation(0.5s);
