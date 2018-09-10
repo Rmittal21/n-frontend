@@ -4,7 +4,24 @@
         ==========================
 */
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "../../node_modules/bootstrap/scss/_functions";
+@import "../../node_modules/bootstrap/scss/_variables";
+@import "../../node_modules/bootstrap/scss/_mixins";
+
 @import "_variables";
+
+@import "../../node_modules/bootstrap/scss/_mixins";
+@import "../../node_modules/bootstrap/scss/_root";
+@import "../../node_modules/bootstrap/scss/_reboot";
+@import "../../node_modules/bootstrap/scss/_type";
+@import "../../node_modules/bootstrap/scss/_images";
+@import "../../node_modules/bootstrap/scss/_grid";
+@import "../../node_modules/bootstrap/scss/_forms";
+@import "../../node_modules/bootstrap/scss/_badge";
+@import "../../node_modules/bootstrap/scss/_alert";
+@import "../../node_modules/bootstrap/scss/_media";
+@import "../../node_modules/bootstrap/scss/_utilities";
+
 @import "_helpers";
 @import "_frontend";
