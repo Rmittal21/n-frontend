@@ -42,8 +42,8 @@ var server = {
 }
 
 //Opens webserver
-gulp.task('webserver', function() {
-  gulp.src( '.' )
+gulp.task('webserver', () => {
+  return gulp.src( '.' )
     .pipe(webserver({
       host:             server.host,
       port:             server.port,
@@ -53,13 +53,13 @@ gulp.task('webserver', function() {
 });
 
 //Open the browser
-gulp.task('openbrowser', function() {
-  opn( 'http://' + server.host + ':' + server.port + server.file );
+gulp.task('openbrowser', () => {
+  return opn( 'http://' + server.host + ':' + server.port + server.file );
 });
 
 //Make pretty css from SASS files
-gulp.task('css', function () {
-    gulp.src(paths.css.files)
+gulp.task('css', () => {
+    return gulp.src(paths.css.files)
     .pipe(sass({
         outputStyle: 'compressed',
         includePaths : [paths.css.src],
@@ -69,13 +69,13 @@ gulp.task('css', function () {
     .on('error', gutil.log)
 });
 
-gulp.task('fonts',function() {
-	gulp.src(paths.fonts.src).pipe(gulp.dest(paths.fonts.dest));
+gulp.task('fonts', () => {
+	  return gulp.src(paths.fonts.src).pipe(gulp.dest(paths.fonts.dest));
 });
 
 //Throw JS together and minify
-gulp.task('js', function() {
-    gulp.src(paths.js.files)
+gulp.task('js', () => {
+    return gulp.src(paths.js.files)
     .pipe(uglify())
     .pipe(filesize())
     .pipe(gulp.dest(paths.js.dest))
@@ -83,8 +83,8 @@ gulp.task('js', function() {
 });
 
 //Optimize images
-gulp.task('images', function () {
-     gulp.src(paths.images.src)
+gulp.task('images', () => {
+     return gulp.src(paths.images.src)
      .pipe(imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}],
@@ -94,18 +94,20 @@ gulp.task('images', function () {
 });
 
 //Optimize HTML
-gulp.task('html', function() {
-  gulp.src(paths.html.src)
+gulp.task('html', () => {
+    return gulp.src(paths.html.src)
     .pipe(minifyHTML())
     .pipe(gulp.dest(paths.html.dest));
 });
 
 //Look for changes
-gulp.task('watch', function() {
-  gulp.watch(paths.css.files, ['css']);
-  gulp.watch(paths.js.files, ['js']);
-  gulp.watch(paths.html.src, ['html']);
+gulp.task('watch', () => {
+  gulp.watch(paths.css.files, gulp.series('css'));
+  gulp.watch(paths.js.files, gulp.series('js'));
+  gulp.watch(paths.html.src, gulp.series('html'));
 });
 
 //Serve up the fancy part
-gulp.task('serve', ['css','js','fonts','images','html','webserver','openbrowser','watch']);
+gulp.task('serve', gulp.series('css','js','fonts','images','html','webserver','openbrowser','watch'), () => {
+});
+//gulp.task('serve', ['css','js','fonts','images','html','webserver','openbrowser','watch']);

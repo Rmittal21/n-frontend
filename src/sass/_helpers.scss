@@ -1038,7 +1038,7 @@ a {
 form {
   @include placeholder($grey);
 
-	[type=text],[type=number],[type=password],[type=email],[type=tel],[type=date], textarea, select {
+	[type=text],[type=date],[type=number],[type=password],[type=email],[type=tel],[type=date],textarea,select {
 		width:100%;
     border:none;
     color:$text-color;
@@ -1063,7 +1063,7 @@ form {
 
 		&:focus {    @include border(1px,solid,$text-color,full);   }
 	}
-
+  
 	select, option {
 		@include padding(10px,left);
 		@include padding(5px,top);
